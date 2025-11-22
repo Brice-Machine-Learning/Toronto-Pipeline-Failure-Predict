@@ -50,15 +50,26 @@ pipeline_break_prediction/
 │   └── model_comparison.md
 └── docs/
     ├── 00_overview/
+    │   ├── 01_la_pipe_break_powerbi_project.md
+    │   └── 02_powerbi_dataset_requirements.md
+    │
     ├── 01_architecture/
     │   ├── 00_introduction.md
     │   ├── 01_structure.md
     │   ├── 02_data_flow.md
     │   └── 03_component_descriptions.md
+    │
     ├── 02_data_sources/
+    │   └── 01_la_pipe_break_data_sources.md
+    │
     ├── 03_feature_engin/
+    │   
+    │
     ├── 04_modeling_appr/
+    │   
+    │
     └── 05_risk_scoring_/
+        
 ```
 
 ## Description of Project Structure
