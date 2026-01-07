@@ -126,9 +126,11 @@ la_pipeline_failure_predict/
     ├── 05_powerbi/
     │   └── 00_powerbi_dataset_requirements.md
     │ 
-    ├── 07_reference/
+    ├── 06_database/
     │ 
-    ├── 08_readme_files/
+    ├── 07_models/
+    │ 
+    ├── 08_references/
     │   
     ├── 09_lessons_learned/
     │   
