@@ -4,9 +4,12 @@
 
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![Status](https://img.shields.io/badge/status-active%20scaffolding-yellow)
+![Version](https://img.shields.io/badge/version-v0.1.0-blue)
 ![ML](https://img.shields.io/badge/machine%20learning-batch%20risk%20modeling-green)
 ![DB](https://img.shields.io/badge/database-Turso%20%7C%20DuckDB-lightgrey)
 ![BI](https://img.shields.io/badge/BI-Power%20BI-orange)
+
+**Current Version:** `v0.1.0` — *Architecture & documentation baseline*
 
 ---
 
@@ -169,6 +172,28 @@ To keep the README readable, the full structure is documented separately.
 📂 `docs/01_architecture/01_structure.md`  
 📂 `docs/01_architecture/02_data_flow.md`  
 📂 `docs/01_architecture/03_component_descriptions.md`
+
+---
+
+## 🚀 Versioning
+
+This project follows **semantic versioning**, with each release representing a stable milestone.
+
+### ✅ Released
+
+- **v0.1.0** — Architecture, data flow, database strategy, and operational documentation
+
+### 🔜 Planned Versions
+
+| Version | Focus |
+| ------ | ------ |
+| **v0.2.0** | Data ingestion pipelines + initial EDA |
+| **v0.3.0** | Feature engineering + geospatial enrichment |
+| **v0.4.0** | Baseline and boosted ML models |
+| **v0.5.0** | Risk scoring framework + Power BI dashboards |
+| **v1.0.0** | End-to-end deployed analytics platform |
+
+Versions may evolve as data availability and scope mature, but architectural stability is maintained across releases.
 
 ---
 
