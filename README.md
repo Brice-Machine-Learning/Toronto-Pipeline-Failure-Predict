@@ -1,226 +1,223 @@
-# 🚰 Pipeline Break Prediction (Los Angeles Water)  
+# 🚰 Pipeline Break Prediction — Los Angeles Water
 
-## **Infrastructure Risk Modeling • Machine Learning • Geospatial Analytics**
+## Infrastructure Risk Modeling • Machine Learning • Geospatial Analytics
 
-**Status:** 🟡 *Scaffolding initialized — anticipated start December 2025.*
-
-This project builds a **machine-learning–powered risk model** to predict pipeline break probability across Los Angeles using real open municipal datasets. The goal is to combine **civil engineering expertise**, **geospatial analysis**, and **modern data science** to demonstrate how ML can support urban water infrastructure planning and asset management.
+![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
+![Status](https://img.shields.io/badge/status-active%20scaffolding-yellow)
+![ML](https://img.shields.io/badge/machine%20learning-batch%20risk%20modeling-green)
+![DB](https://img.shields.io/badge/database-Turso%20%7C%20DuckDB-lightgrey)
+![BI](https://img.shields.io/badge/BI-Power%20BI-orange)
 
 ---
 
-## 🎯 Project Objectives
+## 📌 Project Overview
 
-- Predict break likelihood for water distribution pipelines  
-- Identify spatial and temporal break patterns  
-- Integrate environmental + geotechnical features  
-- Produce risk scores for proactive maintenance planning  
-- Deliver actionable visualizations for utilities and decision-makers  
+This project builds a **machine-learning–driven pipeline break risk platform** for the Los Angeles water distribution system using real, open municipal data.
+
+It combines **civil engineering domain knowledge**, **geospatial analytics**, and **modern data science** to model pipeline failure risk and deliver **actionable insights** for infrastructure planning, asset management, and capital prioritization.
+
+The system is designed as a **realistic analytics platform**, not a toy ML notebook — featuring batch ETL, persistent analytical storage, feature engineering pipelines, optional ML prediction, and BI-ready outputs.
 
 ---
 
 ## 🧠 Why This Project Matters
 
-Water utilities face increasing challenges from:
+Urban water utilities face increasing pressure from:
 
 - aging buried infrastructure  
-- corrosive soils  
-- climate stress  
-- deferred maintenance  
-- pressure zone dynamics  
+- corrosive soils and geotechnical conditions  
+- climate-driven stress (rainfall, drought, temperature swings)  
+- deferred maintenance and constrained capital budgets  
 
 Machine learning can help utilities:
 
-- prioritize capital replacement  
-- target high-risk segments  
-- justify funding  
-- reduce breaks and service disruptions  
+- prioritize high-risk assets  
+- reduce break frequency and service disruptions  
+- justify capital investment decisions  
+- transition from reactive to proactive maintenance  
 
-This project shows **how AI can support real infrastructure decisions** — with the kind of practical, defensible approach utilities require.
+This project demonstrates **how ML can be applied responsibly and defensibly** in infrastructure risk contexts — aligned with how utilities and consultants actually work.
 
 ---
 
-## 📦 Planned Project Components
+## 🎯 Project Objectives
 
-### **1. Data Acquisition**
+- Predict pipeline break likelihood over time  
+- Identify spatial and temporal break patterns  
+- Integrate environmental and geotechnical drivers  
+- Generate interpretable risk scores  
+- Support planning, reporting, and decision-making workflows  
 
-- Gather curated datasets from:
+---
+
+## 🏗️ System Scope & Design Philosophy
+
+This is a **large, multi-layer project** that includes:
+
+- exploratory notebooks  
+- modular Python source code  
+- database-backed analytics  
+- batch ML workflows  
+- Power BI dashboards  
+- forward-looking API integration (FastAPI planned)
+
+Because of this scope, the project structure is **intentionally documented**, not visualized inline.
+
+👉 **See `/docs` for full architecture, data flow, and component documentation.**
+
+---
+
+## 🧩 Planned Project Components
+
+### 1️⃣ Data Acquisition & ETL
+
 - LADWP water main break datasets  
 - Climate data (NOAA, PRISM)  
-- Soil & corrosivity layers (USDA SSURGO, California Geologic Survey)  
-- Neighborhood + census geography (LA GeoHub)  
-- Optional: elevation, seismicity, road load, land use  
+- Soil & corrosivity layers (USDA SSURGO, CA Geological Survey)  
+- Neighborhood and census geographies  
+- Automated ingestion and validation pipelines  
 
 ---
 
-### **2. Exploratory Data Analysis (EDA)**
+### 2️⃣ Exploratory Data Analysis (EDA)
 
-- Summary statistics
-- Breaks over time  
-- Spatial clustering  
-- Correlations with rainfall, temperature, drought  
-- Neighborhood-level patterns  
-- Data cleaning + anomaly checks  
-
----
-
-### **3. Feature Engineering**
-
-A blend of civil engineering + DS techniques:
-
-| Category | Examples |
-|---------|----------|
-| **Pipe Attributes** | age, diameter, material, length |
-| **Environmental** | rainfall, soil corrosivity, shrink-swell index |
-| **Geospatial** | neighborhood, pressure zone proxy, road classification |
-| **Temporal** | seasonality, year/month, lag features |
+- break frequency distributions  
+- temporal seasonality  
+- spatial patterns and clustering  
+- environmental factor correlations
+- temporal break trends  
+- spatial clustering and hotspots  
+- environmental correlations  
+- data quality checks and anomaly detection  
 
 ---
 
-### **4. Geospatial Processing**
+### 3️⃣ Feature Engineering
 
-Techniques to derive spatial features:
+A hybrid civil engineering + data science approach:
 
-- Spatial joins  
-- Choropleths + kernel density maps  
-- Neighborhood risk overlays  
-- Environmental layer integration  
-- Optional: point-to-line distance features  
-
----
-
-### **5. Predictive Modeling**
-
-Modeling approach:
-
-- Supervised learning (classification/regression)
-- Target: monthly break occurrence/count per segment
-- Evaluation metrics: ROC-AUC, PR-AUC, RMSE
-- Train/test split with temporal holdout  
-- Cross-validation strategy (time-aware)
-
-Candidate models:
-
-- Gradient boosting (XGBoost, LightGBM, CatBoost)  
-- Logistic regression (baseline)  
-- Random forest  
-- Time-aware CV + walk-forward validation  
-
-Output:
-
-- Probability of break (0–1)  
-- Risk score  
-- Feature importance + SHAP interpretability  
+| Category | Example Features |
+| ------- | ---------------- |
+| Pipe Attributes | age, diameter, material |
+| Environmental | rainfall, drought index, temperature |
+| Geotechnical | soil corrosivity, shrink–swell |
+| Spatial | neighborhood, proximity indicators |
+| Temporal | seasonality, lagged break history |
 
 ---
 
-### **6. Risk Scoring Framework**
+### 4️⃣ Machine Learning (Batch)
 
-Define actionable risk tiers based on predicted probabilities.
-Deliverables:
+- Supervised learning (classification / regression)  
+- Time-aware train/test splits  
+- Gradient boosting + baselines  
+- SHAP-based interpretability  
+- Batch scoring (not real-time inference)  
 
-- Utility-style risk tiers (Low / Medium / High / Critical)  
-- Ranking tables  
-- Monthly or yearly predictions  
-- Sensitivity analysis  
+Outputs:
 
----
-
-### **7. Dashboards & Reporting**
-
-(Power BI integration planned)
-
-- Breaks over time  
-- Environmental drivers  
-- Heatmaps / hotspot maps  
-- Predicted risk ranking  
-- Neighborhood drilldowns  
+- break probability  
+- risk score  
+- feature importance  
 
 ---
 
-## 🏗️ Technical Stack
+### 5️⃣ Risk Scoring & Reporting
 
-### **Languages & Tools**
+- utility-style risk tiers  
+- ranked high-risk segments  
+- monthly / annual scoring runs  
+- BI-ready outputs  
 
-- Python (pandas, numpy, matplotlib, scikit-learn, geopandas, shapely, xgboost/lightgbm)
-- PostgreSQL + PostGIS  
-- Power BI  
-- Jupyter Notebooks / VS Code  
-- GitHub project management  
+---
+
+### 6️⃣ Dashboards & Analytics (Power BI)
+
+Planned dashboards include:
+
+- breaks over time  
+- environmental drivers  
+- geographic risk heatmaps  
+- neighborhood drilldowns  
+- ML-based risk ranking  
+
+---
+
+## 🧱 Technical Stack
+
+### Core Technologies
+
+- **Python** (pandas, numpy, scikit-learn, geopandas, shapely)
+- **DuckDB** (local analytical compute)
+- **Turso (libSQL)** (persistent analytical storage)
+- **Power BI** (dashboards and reporting)
+- **Jupyter Notebooks**
+- **Git & GitHub**
+
+Planned:
+
+- **FastAPI** for API-based access and future extensions
 
 ---
 
 ## 📁 Project Structure
 
-```plaintext
-la-pipeline-break-prediction/
-│
-├── data/
-│   ├── raw/
-│   └── processed/
-│
-├── notebooks/
-│   ├── 01_eda.ipynb
-│   ├── 02_feature_engineering.ipynb
-│   ├── 03_modeling.ipynb
-│   └── 04_risk_scoring.ipynb
-│
-├── src/
-│   ├── data/
-│   ├── features/
-│   ├── models/
-│   └── visualization/
-│
-├── powerbi/
-│   ├── model/
-│   └── reports/
-│
-├── docs/
-│   ├── overview.md
-│   ├── data_sources.md
-│   ├── powerbi_data_model.md
-│   ├── feature_engineering_plan.md
-│   └── risk_framework.md
-│
-└── README.md
-```
+This repository contains **multiple subsystems** (ETL, ML, DB, BI, docs).  
+To keep the README readable, the full structure is documented separately.
+
+👉 **See:**  
+📂 `docs/01_architecture/01_structure.md`  
+📂 `docs/01_architecture/02_data_flow.md`  
+📂 `docs/01_architecture/03_component_descriptions.md`
 
 ---
 
 ## 🚀 Roadmap
 
-### **Phase 1 — Setup & EDA (Starting Dec 2025)**  
+### Phase 1 — Scaffolding & EDA
 
-- [x] Repo scaffold  
-- [ ] Data acquisition  
-- [ ] Initial EDA  
+- [x] Repository structure
+- [x] Architecture documentation
+- [ ] Data ingestion
+- [ ] Initial EDA
 
-### **Phase 2 — Feature Engineering**  
+### Phase 2 — Feature Engineering
 
-- [ ] Asset + environmental feature build  
-- [ ] Geospatial joins  
-- [ ] Climate integration  
+- [ ] Environmental + asset features
+- [ ] Geospatial joins
+- [ ] Climate integration
 
-### **Phase 3 — Modeling**  
+### Phase 3 — Modeling
 
-- [ ] Baseline models  
-- [ ] Gradient boosting models  
-- [ ] SHAP interpretability  
+- [ ] Baseline models
+- [ ] Gradient boosting
+- [ ] Interpretability (SHAP)
 
-### **Phase 4 — Risk Framework**  
+### Phase 4 — Risk Framework
 
-- [ ] Scoring system  
-- [ ] High-risk segment identification  
-- [ ] Reporting templates  
+- [ ] Risk tiers
+- [ ] Ranking logic
+- [ ] Reporting outputs
 
-### **Phase 5 — Dashboards**  
+### Phase 5 — Dashboards & Deployment
 
-- [ ] Power BI dataset build  
-- [ ] Interactive visuals  
-- [ ] Publishing  
+- [ ] Power BI datasets
+- [ ] Dashboards
+- [ ] Scheduled batch runs
 
 ---
 
-## 📬 Status & Notes
+## 📬 Project Status
 
-Full development begins **December 2025** once the current Kaggle competition is complete.  
-The project is being set up to follow a **clean, senior-level structure** with clear documentation, modular code, and reproducible workflows.
+**Status:** Active scaffolding and documentation phase  
+**Full development:** Begins December 2025  
+
+The project is being built with **senior-level structure and documentation standards**, emphasizing clarity, reproducibility, and realistic deployment patterns.
+
+---
+
+## 📚 Documentation
+
+All design decisions, architecture diagrams, data flow explanations, and operational considerations live in the `/docs` directory.
+
+👉 **Start here:** `docs/00_overview/00_project_overview.md`
