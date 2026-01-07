@@ -96,7 +96,7 @@ la_pipeline_failure_predict/
 │   └── utils/                          # Utility functions
 │       └── __init__.py
 │
-├── models/                             # Trained models directory
+├── artifacts/                             # Trained models and artifacts directory
 │   ├── trained/
 │   └── model_registry.json
 │
@@ -130,11 +130,19 @@ la_pipeline_failure_predict/
     │ 
     ├── 07_models/
     │ 
-    ├── 08_references/
+    ├── 08_deployment/
+    │  
+    ├── 09_security/  
     │   
-    ├── 09_lessons_learned/
+    ├── 10_operations/
     │   
-    └── 10_future_work/
+    ├── 11_project_diary_notes/
+    │   
+    ├── 12_future_plans/
+    │ 
+    ├── 13_lessons_learned/
+    │   
+    └── 14_medium_blog/
         
 ```
 
@@ -152,7 +160,7 @@ This structure is designed to facilitate the development, maintenance, and colla
 - `schemas/`: YAML schema files defining the structure of features, models, data, risk scores, and Power BI exports.
 - `powerbi/`: Power BI project files including datasets, models, reports, and export notes.
 - `src/`: Source code for data processing, feature engineering, modeling, visualization, and utility functions.
-- `src/la_pipeline_break_predict/`: Main package for the project containing submodules for different functionalities.
+- `src/la_pipeline_failure_predict/`: Main package for the project containing submodules for different functionalities.
 - `src/la_pipeline_failure_predict/api/`: API client for interacting with Los Angeles data services.
 - `src/la_pipeline_failure_predict/config/`: Configuration settings for the project.
 - `src/la_pipeline_failure_predict/core/`: Core functionalities and initializations.
@@ -166,6 +174,6 @@ This structure is designed to facilitate the development, maintenance, and colla
 - `src/la_pipeline_failure_predict/templates/`: Template files for the project.
 - `src/la_pipeline_failure_predict/visualization/`: Visualization scripts for EDA, features, and risk mapping.
 - `src/la_pipeline_failure_predict/utils/`: Utility functions.
-- `models/`: Storage for trained models and model registry.
+- `artifacts/`: Storage for trained models and model registry.
 - `reports/`: Generated reports and figures for analysis and documentation.
 - `docs/`: Documentation related to the project architecture and other relevant topics.
