@@ -1,8 +1,8 @@
-# 📊 LA Pipe Break Analytics Project  
+# 📊 LA Water Main Break Analytics & Risk Platform  
 
 ## **Power BI + PostgreSQL + Python ETL**
 
-This project creates an analytics and visualization platform for **water pipeline break trends** in Los Angeles, using **Power BI**, **PostgreSQL**, and **Python ETL pipelines**. It blends civil engineering domain knowledge with backend engineering and data analytics — exactly how real utilities manage infrastructure risk.
+This project creates an analytics and visualization platform for **water main break trends** in Los Angeles, using **Power BI**, **PostgreSQL**, and **Python ETL pipelines**. It blends civil engineering domain knowledge with backend engineering and data analytics — aligned with how utilities manage infrastructure risk in practice.
 
 ---
 
@@ -83,25 +83,25 @@ Break event data from LADWP.
 
 Monthly PRISM/NOAA rainfall + temperature.
 
-| column        | type  |
-|---------------|-------|
+| column        | type   |
+|---------------|--------|
 | id            | serial |
-| year          | int   |
-| month         | int   |
-| rainfall_mm   | float |
-| mean_temp_c   | float |
-| drought_index | float |
+| year          | int    |
+| month         | int    |
+| rainfall_mm   | float  |
+| mean_temp_c   | float  |
+| drought_index | float  |
 
 ### **3. `soil_zones`**
 
 Corrosivity and geotechnical indicators.
 
-| column             | type  |
-|--------------------|-------|
-| id                 | serial |
-| zone_code          | text  |
-| description        | text  |
-| corrosivity_index  | float |
+| column            | type   |
+|-------------------|--------|
+| id                | serial |
+| zone_code         | text   |
+| description       | text   |
+| corrosivity_index | float  |
 
 ### **4. `joined_risk_view`**
 
@@ -113,7 +113,7 @@ Contains:
 - break_count  
 - rainfall, temperature  
 - soil corrosivity  
-- optional ML risk score  
+- The initial focus is descriptive and diagnostic analytics, with predictive modeling introduced incrementally risk score  
 
 ---
 
@@ -169,39 +169,11 @@ Contains:
 
 ## 📁 Suggested Repo Structure
 
-```plaintext
-la-pipe-break-analytics/
-│
-├── data/
-│   ├── raw/
-│   └── processed/
-│
-├── db/
-│   ├── schema.sql
-│   └── seed_data.sql
-│
-├── powerbi/
-│   ├── model/
-│   └── reports/
-│
-├── src/
-│   ├── etl/
-│   │   ├── ingest_breaks.py
-│   │   ├── ingest_climate.py
-│   │   └── load_to_postgres.py
-│   └── utils/
-│
-├── docs/
-│   ├── 00_overview.md
-│   ├── 01_data_sources.md
-│   └── 02_dashboard_plan.md
-│
-└── README.md
-```
+See the [architecture docs](../01_architecture/01_structure.md) for a full breakdown of the project structure.
 
 ---
 
-## 🎯 Why This Is a Strategic First Power BI Project
+## 🎯 A Strategic Power BI Analytics Project
 
 This project:
 
@@ -211,6 +183,6 @@ This project:
 - builds **real-world dashboards**  
 - incorporates **environmental + engineering** features  
 - can expand into **ML prediction**  
-- looks like something **a utility would pay consultants $30k+ to build**  
+- similar in scope to analytics dashboards utilities often procure from external consultants
 
 >The perfect bridge between civil engineering background and backend/data/ML.

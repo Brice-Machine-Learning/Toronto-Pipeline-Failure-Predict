@@ -18,6 +18,7 @@ la_pipeline_failure_predict/
 │       └── soils_layers/
 │
 ├── notebooks/                          # Jupyter notebooks
+│   ├── 00_baseline.ipynb               # Baseline Analysis
 │   ├── 01_eda.ipynb                    # Exploratory Data Analysis
 │   ├── 02_feature_engineering.ipynb    # Feature Engineering
 │   ├── 03_model_training.ipynb         # Model Training
@@ -62,6 +63,17 @@ la_pipeline_failure_predict/
 │   │   ├── download.py
 │   │   ├── make_dataset.py
 │   │   └── geospatial_utils.py
+│   ├── db/                             # Database interaction
+│   │   ├── __init__.py
+│   │   ├── connection.py
+│   │   ├── session.py                  # optional helper
+│   │   ├── migrations/
+│   │   │   ├── 01_create_tables.sql
+│   │   │   └── 02_add_indexes.sql
+│   │   └── queries/
+│   │       ├── pipe_breaks.sql
+│   │       ├── features.sql
+│   │       └── risk_scores.sql
 │   ├── etl/                            # ETL processes
 │   │   └── ingest_breaks.py
 │   ├── features/                       # Feature engineering
@@ -95,8 +107,8 @@ la_pipeline_failure_predict/
 │
 └── docs/                               # Documentation directory
     ├── 00_overview/
-    │   ├── 01_la_pipeline_failure_powerbi_project.md
-    │   └── 02_powerbi_dataset_requirements.md
+    │   ├── 00_project_overview.md
+    │   └── 01_la_water_main_break_analytics.md
     │
     ├── 01_architecture/
     │   ├── 00_introduction.md
@@ -111,13 +123,16 @@ la_pipeline_failure_predict/
     │   
     ├── 04_reports/
     │   
-    ├── 05_references/
+    ├── 05_powerbi/
+    │   └── 00_powerbi_dataset_requirements.md
+    │ 
+    ├── 07_reference/
+    │ 
+    ├── 08_readme_files/
     │   
-    ├── 06_readme_files/
+    ├── 09_lessons_learned/
     │   
-    ├── 07_lessons_learned/
-    │   
-    └── 08_future_work/
+    └── 10_future_work/
         
 ```
 
@@ -135,11 +150,12 @@ This structure is designed to facilitate the development, maintenance, and colla
 - `schemas/`: YAML schema files defining the structure of features, models, data, risk scores, and Power BI exports.
 - `powerbi/`: Power BI project files including datasets, models, reports, and export notes.
 - `src/`: Source code for data processing, feature engineering, modeling, visualization, and utility functions.
-- `src/la_pipe_break_prediction/`: Main package for the project containing submodules for different functionalities.
+- `src/la_pipeline_break_predict/`: Main package for the project containing submodules for different functionalities.
 - `src/la_pipeline_failure_predict/api/`: API client for interacting with Los Angeles data services.
 - `src/la_pipeline_failure_predict/config/`: Configuration settings for the project.
 - `src/la_pipeline_failure_predict/core/`: Core functionalities and initializations.
 - `src/la_pipeline_failure_predict/data/`: Data handling and geospatial utilities.
+- `src/la_pipeline_failure_predict/db/`: Database connection and query management.
 - `src/la_pipeline_failure_predict/etl/`: Extract, Transform, Load processes for data ingestion.
 - `src/la_pipeline_failure_predict/features/`: Feature engineering scripts.
 - `src/la_pipeline_failure_predict/log/`: Logging utilities.
