@@ -5,7 +5,7 @@ API client for interacting with the LA data collection service.
 
 import requests
 from typing import Dict, Any, Optional
-from src.config import settings
+from la_pipeline_failure_predict.config import settings
 
 class LAApiClient:
     """

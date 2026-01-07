@@ -1,7 +1,7 @@
 # src/etl/ingest_breaks.py
 """Ingest water main breaks data from LA open data API."""
 
-from src.api.la_client import LAApiClient
+from la_pipeline_failure_predict.api.la_client import LAApiClient
 import pandas as pd
 
 
