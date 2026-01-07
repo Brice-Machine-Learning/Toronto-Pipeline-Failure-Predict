@@ -29,47 +29,47 @@ To support that, the dataset needs **clean, joined, time-aligned tables**.
 
 ### **2.1 `pipe_breaks` (Fact Table)**
 
-| Column | Type | Required | Description |
-|--------|------|----------|-------------|
-| id | integer | ✓ | Unique identifier |
-| break_date | date | ✓ | Actual break date |
-| year | integer | ✓ | Extracted via ETL |
-| month | integer | ✓ | Extracted via ETL |
-| neighborhood | text | ✓ | Mapped location |
-| break_count | int | ✓ | Monthly aggregated count |
+| Column       | Type    | Required | Description              |
+| ------------ | ------- | -------- | ------------------------ |
+| id           | integer | ✓        | Unique identifier        |
+| break_date   | date    | ✓        | Actual break date        |
+| year         | integer | ✓        | Extracted via ETL        |
+| month        | integer | ✓        | Extracted via ETL        |
+| neighborhood | text    | ✓        | Mapped location          |
+| break_count  | int     | ✓        | Monthly aggregated count |
 
 ---
 
 ### **2.2 `climate_monthly` (Dimension Table)**
 
-| Column | Type | Required |
-|--------|------|----------|
-| year | int | ✓ |
-| month | int | ✓ |
-| rainfall_mm | float | ✓ |
-| mean_temp_c | float | ✓ |
+| Column        | Type  | Required |
+| ------------- | ----- | -------- |
+| year          | int   | ✓        |
+| month         | int   | ✓        |
+| rainfall_mm   | float | ✓        |
+| mean_temp_c   | float | ✓        |
 | drought_index | float | optional |
 
 ---
 
 ### **2.3 `soil_zones` (Dimension Table)**
 
-| Column | Type | Required |
-|--------|------|----------|
-| zone_code | text | ✓ |
-| neighborhood | text | ✓ |
-| corrosivity_index | float | ✓ |
+| Column            | Type  | Required |
+| ----------------- | ----- | -------- |
+| zone_code         | text  | ✓        |
+| neighborhood      | text  | ✓        |
+| corrosivity_index | float | ✓        |
 
 ---
 
 ### **2.4 `joined_risk_view` (Optional Fact Table)**
 
-| Column | Type | Required |
-|--------|------|----------|
-| year | int | ✓ |
-| month | int | ✓ |
+| Column               | Type  | Required |
+| -------------------- | ----- | -------- |
+| year                 | int   | ✓        |
+| month                | int   | ✓        |
 | predicted_break_prob | float | optional |
-| risk_class | text | optional |
+| risk_class           | text  | optional |
 
 ---
 
@@ -116,13 +116,13 @@ CALCULATE(
 
 ## 5. 🧼 Data Quality Requirements
 
-| Requirement | Why |
-|------------|------|
-| No null month/year values | Breaks date hierarchy |
-| Standardized neighborhood names | Required for joins |
-| No duplicate months per neighborhood | Ensures trend accuracy |
+| Requirement                                 | Why                             |
+| ------------------------------------------- | ------------------------------- |
+| No null month/year values                   | Breaks date hierarchy           |
+| Standardized neighborhood names             | Required for joins              |
+| No duplicate months per neighborhood        | Ensures trend accuracy          |
 | Climate data aligned to monthly granularity | Prevents incorrect correlations |
-| Soil zones mapped | Enables environmental slicing |
+| Soil zones mapped                           | Enables environmental slicing   |
 
 ---
 

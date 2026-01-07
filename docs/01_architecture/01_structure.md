@@ -1,57 +1,114 @@
 # Project Structure for Pipeline Break Prediction
 
 ```plaintext
-pipeline_break_prediction/
-├── README.md
-├── pyproject.toml
-├── requirements.txt
-├── environment.yml
-├── .gitignore
-├── .env.example
-├── data/
+la_pipeline_failure_predict/
+├── README.md                   # Project overview and instructions
+├── pyproject.toml              # Python project configuration file
+├── requirements.txt            # Python dependencies file
+├── environment.yml             # Conda environment file
+├── .gitignore                  # Git ignore file
+├── .env.example                # Example environment variables file
+├── .env                        # Environment variables file (not included in version control)
+├── data/                       # Data directory
 │   ├── raw/
 │   │   └── pipeline_breaks_la.csv
 │   ├── interim/
 │   ├── processed/
 │   └── external/
 │       └── soils_layers/
-├── notebooks/
-│   ├── 01_eda.ipynb
-│   ├── 02_feature_engineering.ipynb
-│   ├── 03_model_training.ipynb
-│   ├── 04_evaluation.ipynb
-│   └── 05_risk_scoring.ipynb
-├── src/
+│
+├── notebooks/                          # Jupyter notebooks
+│   ├── 00_baseline.ipynb               # Baseline Analysis
+│   ├── 01_eda.ipynb                    # Exploratory Data Analysis
+│   ├── 02_feature_engineering.ipynb    # Feature Engineering
+│   ├── 03_model_training.ipynb         # Model Training
+│   ├── 04_evaluation.ipynb             # Model Evaluation
+│   └── 05_risk_scoring.ipynb           # Risk Scoring
+│
+├── schemas/                        # Schema definitions
+│   ├── features_schema.yaml
+│   ├── model_schema.yaml
+│   ├── data_schema.yaml
+│   ├── risk_score_schema.yaml
+│   └── powerbi_export_schema.yaml
+│
+├── powerbi/                        # Power BI project files
+│   ├── README.md
+│   ├── datasets/
+│   │   ├── pipe_breaks.sql
+│   │   ├── climate_monthly.sql
+│   │   └── joined_risk_view.sql
+│   ├── model/
+│   │   ├── relationships.md
+│   │   ├── measures.md
+│   │   └── la_pipe_break_model.pbit
+│   ├── reports/
+│   │   ├── la_pipeline_failure_overview.pbix
+│   │   ├── la_pipeline_failure_risk.pbix
+│   │   └── la_pipeline_failure_dashboard.pbix
+│   └── exports/
+│       ├── powerbi_export.sql
+│       ├── data_validation_checks.md
+│       └── refresh_notes.md
+│
+├── src/la_pipeline_failure_predict/    # Source code directory
 │   ├── __init__.py
-│   ├── config/
+│   ├── api/                            # API clients
+│   │   └── la_client.py
+│   ├── config/                         # Configuration files
 │   │   └── settings.py
-│   ├── data/
+│   ├── core/
+│   │   └── __init__.py
+│   ├── data/                           # Data handling
 │   │   ├── download.py
 │   │   ├── make_dataset.py
 │   │   └── geospatial_utils.py
-│   ├── features/
+│   ├── db/                             # Database interaction
+│   │   ├── __init__.py
+│   │   ├── connection.py
+│   │   ├── session.py                  # optional helper
+│   │   ├── migrations/
+│   │   │   ├── 01_create_tables.sql
+│   │   │   └── 02_add_indexes.sql
+│   │   └── queries/
+│   │       ├── pipe_breaks.sql
+│   │       ├── features.sql
+│   │       └── risk_scores.sql
+│   ├── etl/                            # ETL processes
+│   │   └── ingest_breaks.py
+│   ├── features/                       # Feature engineering
 │   │   └── build_features.py
-│   ├── models/
+│   ├── log/                            # Logging utilities
+│   │   └── logger.py
+│   ├── models/                         # Modeling
 │   │   ├── train_model.py
 │   │   ├── predict_model.py
 │   │   └── evaluate_model.py
-│   ├── visualization/
+│   ├── static/                         # Static files
+│   │   └── __init__.py
+│   ├── templates/                      # Template files
+│   │   └── __init__.py
+│   ├── visualization/                  # Visualization scripts
+│   │   ├── __init__.py
 │   │   ├── eda_plots.py
 │   │   ├── feature_plots.py
 │   │   └── risk_map.py
-│   └── utils/
-│       └── logger.py
-├── models/
+│   └── utils/                          # Utility functions
+│       └── __init__.py
+│
+├── artifacts/                             # Trained models and artifacts directory
 │   ├── trained/
 │   └── model_registry.json
-├── reports/
+│
+├── reports/                            # Reports directory
 │   ├── figures/
 │   ├── eda_report.md
 │   └── model_comparison.md
-└── docs/
+│
+└── docs/                               # Documentation directory
     ├── 00_overview/
-    │   ├── 01_la_pipe_break_powerbi_project.md
-    │   └── 02_powerbi_dataset_requirements.md
+    │   ├── 00_project_overview.md
+    │   └── 01_la_water_main_break_analytics.md
     │
     ├── 01_architecture/
     │   ├── 00_introduction.md
@@ -62,13 +119,30 @@ pipeline_break_prediction/
     ├── 02_data_sources/
     │   └── 01_la_pipe_break_data_sources.md
     │
-    ├── 03_feature_engin/
+    ├── 03_notebooks/
     │   
-    │
-    ├── 04_modeling_appr/
+    ├── 04_reports/
     │   
-    │
-    └── 05_risk_scoring_/
+    ├── 05_powerbi/
+    │   └── 00_powerbi_dataset_requirements.md
+    │ 
+    ├── 06_database/
+    │ 
+    ├── 07_models/
+    │ 
+    ├── 08_deployment/
+    │  
+    ├── 09_security/  
+    │   
+    ├── 10_operations/
+    │   
+    ├── 11_project_diary_notes/
+    │   
+    ├── 12_future_plans/
+    │ 
+    ├── 13_lessons_learned/
+    │   
+    └── 14_medium_blog/
         
 ```
 
@@ -76,14 +150,30 @@ pipeline_break_prediction/
 
 This structure is designed to facilitate the development, maintenance, and collaboration on the Pipeline Break Prediction project. Each directory serves a specific purpose, ensuring that code, data, documentation, and reports are organized logically.
 
-- `pipeline_break_prediction/`: Root directory of the project.
+- `la_pipeline_failure_predict/`: Root directory of the project.
 - `README.md`: Overview and instructions for the project.
 - `pyproject.toml`, `requirements.txt`, and `environment.yml`: Dependency management files.
 - `.gitignore`: Specifies files and directories to be ignored by Git.
 - `.env.example`: Example environment variables file for configuration.
 - `data/`: Contains raw, interim, processed, and external datasets.
 - `notebooks/`: Jupyter notebooks for exploratory data analysis, feature engineering, model training, evaluation, and risk scoring.
+- `schemas/`: YAML schema files defining the structure of features, models, data, risk scores, and Power BI exports.
+- `powerbi/`: Power BI project files including datasets, models, reports, and export notes.
 - `src/`: Source code for data processing, feature engineering, modeling, visualization, and utility functions.
-- `models/`: Storage for trained models and model registry.
+- `src/la_pipeline_failure_predict/`: Main package for the project containing submodules for different functionalities.
+- `src/la_pipeline_failure_predict/api/`: API client for interacting with Los Angeles data services.
+- `src/la_pipeline_failure_predict/config/`: Configuration settings for the project.
+- `src/la_pipeline_failure_predict/core/`: Core functionalities and initializations.
+- `src/la_pipeline_failure_predict/data/`: Data handling and geospatial utilities.
+- `src/la_pipeline_failure_predict/db/`: Database connection and query management.
+- `src/la_pipeline_failure_predict/etl/`: Extract, Transform, Load processes for data ingestion.
+- `src/la_pipeline_failure_predict/features/`: Feature engineering scripts.
+- `src/la_pipeline_failure_predict/log/`: Logging utilities.
+- `src/la_pipeline_failure_predict/models/`: Model training, prediction, and evaluation scripts.
+- `src/la_pipeline_failure_predict/static/`: Static files for the project.
+- `src/la_pipeline_failure_predict/templates/`: Template files for the project.
+- `src/la_pipeline_failure_predict/visualization/`: Visualization scripts for EDA, features, and risk mapping.
+- `src/la_pipeline_failure_predict/utils/`: Utility functions.
+- `artifacts/`: Storage for trained models and model registry.
 - `reports/`: Generated reports and figures for analysis and documentation.
 - `docs/`: Documentation related to the project architecture and other relevant topics.
