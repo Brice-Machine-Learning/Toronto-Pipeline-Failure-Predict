@@ -142,8 +142,9 @@ la_pipeline_failure_predict/
     │ 
     ├── 13_lessons_learned/
     │   
-    └── 14_medium_blog/
-        
+    ├── 14_risk_scoring/
+    │ 
+    └── 15_medium_blog/        
 ```
 
 ## Description of Project Structure
