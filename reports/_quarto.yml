@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: outputs/html
+  preview:
+    port: 4200
 
 website:
   title: "LA Pipeline Failure Analytics"
@@ -92,7 +94,12 @@ format:
     toc-depth: 3
     number-sections: true
     code-fold: true
+    page-navigation: true
+
+# bibliography: references.bib
+# csl: apa.csl
 
 execute:
   python: ../.venv-reports/bin/python
   freeze: auto
+
