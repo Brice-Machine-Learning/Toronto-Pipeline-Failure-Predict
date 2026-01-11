@@ -55,6 +55,8 @@ la_pipeline_failure_predict/
 │   ├── __init__.py
 │   ├── api/                            # API clients
 │   │   └── la_client.py
+│   ├── auth/                           # Authentication clients
+│   │   └── la_auth.py
 │   ├── config/                         # Configuration files
 │   │   └── settings.py
 │   ├── core/
@@ -87,7 +89,31 @@ la_pipeline_failure_predict/
 │   ├── static/                         # Static files
 │   │   └── __init__.py
 │   ├── templates/                      # Template files
-│   │   └── __init__.py
+│   │   ├── base.html
+│   │   ├── base_auth.html              # Base template for authentication pages
+│   │   ├── base_dashboard.html         # Base template for dashboard pages (with sidebar)
+│   │   ├── auth/
+│   │   │   ├── login.html
+│   │   │   ├── logout.html
+│   │   │   └── register.html
+│   │   ├── dashboard/
+│   │   │   ├── dashboard.html
+│   │   │   ├── onboarding.html         # Onboarding page (for new users)
+│   │   │   └── profile.html
+│   │   ├── reports/
+│   │   │   ├── report_overview.html    # Report overview template (list of reports)
+│   │   │   ├── risk_assessment.html    # Risk assessment report template (detailed)
+│   │   │   └── risk_report.html        # Power BI report 
+│   │   ├── partials/
+│   │   │   ├── navbar.html             # Navigation bar partial
+│   │   │   ├── sidebar.html            # Sidebar partial
+│   │   │   ├── flash_messages.html     # Flash messages partial
+│   │   │   ├── breadcrumbs.html        # Breadcrumbs partial (navigation aid)
+│   │   │   ├── powerbi_embed.html      # Power BI embed partial (for embedding reports)
+│   │   │   └── footer.html             # Footer partial
+│   │   └── errors/
+│   │       ├── 404.html
+│   │       └── 500.html
 │   ├── visualization/                  # Visualization scripts
 │   │   ├── __init__.py
 │   │   ├── eda_plots.py
@@ -100,10 +126,7 @@ la_pipeline_failure_predict/
 │   ├── trained/
 │   └── model_registry.json
 │
-├── reports/                            # Reports directory
-│   ├── figures/
-│   ├── eda_report.md
-│   └── model_comparison.md
+├── reports/                            # Reports directory (see 01a_structure_reports.md for details)
 │
 └── docs/                               # Documentation directory
     ├── 00_overview/
