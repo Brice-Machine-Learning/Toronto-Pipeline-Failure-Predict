@@ -1,0 +1,98 @@
+project:
+  type: website
+  output-dir: outputs/html
+
+website:
+  title: "LA Pipeline Failure Analytics"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+
+      - text: "Executive Summary"
+        file: index.qmd
+
+      - section: "Introduction"
+        contents:
+          - 01_introduction/index.qmd
+          - 01_introduction/problem_statement.qmd
+
+      - section: "Studies & Environments"
+        contents:
+          - 02_studies/index.qmd
+          - 02_studies/seasonality_study.qmd
+          - 02_studies/environmental_drivers_study.qmd
+          - 02_studies/soil_corrosivity_study.qmd
+
+      - section: "Methodology"
+        contents:
+          - 03_methodology/index.qmd
+          - 03_methodology/data_sources.qmd
+          - 03_methodology/data_processing.qmd
+          - 03_methodology/feature_engineering.qmd
+          - 03_methodology/assumptions_limitations.qmd
+
+      - section: "Data Analysis"
+        contents:
+          - 04_data_analysis/index.qmd
+          - 04_data_analysis/descriptive_statistics.qmd
+          - 04_data_analysis/temporal_analysis.qmd
+          - 04_data_analysis/spatial_analysis.qmd
+          - 04_data_analysis/environmental_analysis.qmd
+
+      - section: "Machine Learning Model"
+        contents:
+          - 05_ml_model/index.qmd
+          - 05_ml_model/model_overview.qmd
+          - 05_ml_model/training_data.qmd
+          - 05_ml_model/model_performance.qmd
+          - 05_ml_model/feature_importance.qmd
+          - 05_ml_model/validation.qmd
+
+      - section: "Assets"
+        contents:
+          - 06_assets/index.qmd
+          - 06_assets/asset_types.qmd
+          - 06_assets/asset_locations.qmd
+          - 06_assets/asset_conditions.qmd
+
+      - section: "Results"
+        contents:
+          - 07_results/index.qmd
+          - 07_results/analytical_results.qmd
+          - 07_results/model_results.qmd
+
+      - section: "Discussion"
+        contents:
+          - 08_discussion/index.qmd
+          - 08_discussion/implications.qmd
+          - 08_discussion/limitations.qmd
+          - 08_discussion/risk_considerations.qmd
+
+      - section: "Conclusion"
+        contents:
+          - 09_conclusion/index.qmd
+
+      - section: "Appendices"
+        contents:
+          - 10_appendices/index.qmd
+          - 10_appendices/raw_data_tables.qmd
+          - 10_appendices/supplemental_figures.qmd
+          - 10_appendices/modeling_details.qmd
+          - 10_appendices/reproducibility_notes.qmd
+
+      - section: "References"
+        contents:
+          - 11_references/index.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+
+execute:
+  python: ../.venv-reports/bin/python
+  freeze: auto

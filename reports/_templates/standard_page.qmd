@@ -1,0 +1,32 @@
+---
+title: "<PAGE TITLE>"
+---
+
+## Objective
+
+Briefly state **why this page exists** and what question it answers.
+One or two paragraphs max.
+
+---
+
+## Data & Inputs
+
+Describe:
+- datasets used
+- time ranges
+- spatial scope
+- assumptions specific to this page
+
+---
+
+## Methodology
+
+Explain *how* the analysis was performed:
+- transformations
+- models
+- statistical techniques
+- parameters that matter
+
+```{python}
+# Example placeholder
+# Code blocks are allowed but not required on every page
