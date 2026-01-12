@@ -125,7 +125,7 @@ Below is a curated, **high-quality** set of datasets — with descriptions, dire
 ## 🏗️ Recommended Feature Matrix (What Your Model Will Need)
 
 | Category | Example Variables | Source |
-|---------|-------------------|--------|
+| --------- | ------------------- | -------- |
 | **Pipe Physical Attributes** | Material, diameter, age, install year, length | LA Open Data (if available) |
 | **Environmental Stress** | Soil corrosivity, shrink/swell, groundwater | SSURGO / CGS |
 | **Climate** | Rainfall, drought severity, freeze range | NOAA / PRISM |

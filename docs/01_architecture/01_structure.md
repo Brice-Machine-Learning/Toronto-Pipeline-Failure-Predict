@@ -11,9 +11,21 @@ la_pipeline_failure_predict/
 ├── .env                        # Environment variables file (not included in version control)
 ├── data/                       # Data directory
 │   ├── raw/
-│   │   └── pipeline_breaks_la.csv
+│   │   ├── climate/
+│   │   ├── gis/
+│   │   ├── soils/
+│   │   └── watermain_breaks/
+│   │       └── pipeline_breaks_la.csv
 │   ├── interim/
+│   │   ├── climate/
+│   │   ├── gis/
+│   │   ├── soils/
+│   │   └── watermain_breaks/
 │   ├── processed/
+│   │   ├── climate/
+│   │   ├── gis/
+│   │   ├── soils/
+│   │   └── watermain_breaks/
 │   └── external/
 │       └── soils_layers/
 │
