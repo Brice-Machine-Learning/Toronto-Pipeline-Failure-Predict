@@ -16,12 +16,12 @@ Establish scope, guardrails, and delivery expectations before writing code.
 
 _**Checklist**
 
-- [ ] Define project purpose and success criteria
-- [ ] Explicitly document non-goals (e.g., real-time inference)
-- [ ] Identify primary stakeholders and analytical use cases
-- [ ] Define versioning strategy (v0.x analytics → v1.x risk modeling)
-- [ ] Finalize repository structure (code, data, docs separation)
-- [ ] Draft initial README (problem, architecture, roadmap)
+- [x] Define project purpose and success criteria
+- [x] Explicitly document non-goals (e.g., real-time inference)
+- [x] Identify primary stakeholders and analytical use cases
+- [x] Define versioning strategy (v0.x analytics → v1.x risk modeling)
+- [x] Finalize repository structure (code, data, docs separation)
+- [x] Draft initial README (problem, architecture, roadmap)
 
 _**Deliverables**
 
