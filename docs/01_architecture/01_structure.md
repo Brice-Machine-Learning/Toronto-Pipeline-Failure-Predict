@@ -20,11 +20,13 @@ la_pipeline_failure_predict/
 │   │   ├── climate/
 │   │   ├── gis/
 │   │   ├── soils/
+│   │   ├── watermain_data/
 │   │   └── watermain_breaks/
 │   ├── processed/
 │   │   ├── climate/
 │   │   ├── gis/
 │   │   ├── soils/
+│   │   ├── watermain_data/
 │   │   └── watermain_breaks/
 │   └── external/
 │       └── soils_layers/
