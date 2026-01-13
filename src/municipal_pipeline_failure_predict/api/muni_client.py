@@ -5,9 +5,9 @@ API client for interacting with the LA data collection service.
 
 import requests
 from typing import Dict, Any, Optional
-from la_pipeline_failure_predict.config import settings
+from municipal_pipeline_failure_predict.config import settings
 
-class LAApiClient:
+class MunicipalApiClient:
     """
     Lightweight client for LA open data endpoints.
     Handles auth token, request retries, and JSON parsing.
@@ -16,7 +16,7 @@ class LAApiClient:
     BASE_URL = "https://data.lacity.org/resource"
 
     def __init__(self, token: Optional[str] = None):
-        self.token = token or settings.la_api_token
+        self.token = token
         self.headers = {
             "X-App-Token": self.token
         }

@@ -3,7 +3,7 @@
 Logging configuration for the LA pipeline failure prediction project."""
 
 import logging
-from src.config import settings
+from municipal_pipeline_failure_predict.config.settings import settings
 import os
 
 # Ensure the logs directory exists

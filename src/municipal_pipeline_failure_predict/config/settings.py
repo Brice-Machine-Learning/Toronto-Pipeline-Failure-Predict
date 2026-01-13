@@ -1,13 +1,13 @@
 # src/config/settings.py
 """
-Settings configuration for the LA pipeline failure prediction project.
+Settings configuration for the Municipal Pipeline Failure Prediction project.
 """
 
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 from pathlib import Path
 class Settings(BaseSettings):
     # Project metadata
-    PROJECT_NAME: str = "LA Pipeline Failure Prediction"
+    PROJECT_NAME: str = "Municipal Pipeline Failure Prediction"
     VERSION: str = "1.0.0"
 
     # Data paths
@@ -23,7 +23,7 @@ class Settings(BaseSettings):
     TEST_SIZE: float = 0.2
 
     # API settings
-    LA_API_URL: str = "https://api.la-data-collection.com"
+    MUNICIPAL_API_URL: str = "https://api.municipal-data-collection.com"
     API_TIMEOUT: int = 10  # seconds
 
     class Config:
