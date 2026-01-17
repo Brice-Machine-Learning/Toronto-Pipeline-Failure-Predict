@@ -1,6 +1,6 @@
 # Component Responsibilities
 
-This document defines the **responsibilities, inputs, and outputs** of each major component in the **LA Water Main Break Analytics & Risk Platform**.  
+This document defines the **responsibilities, inputs, and outputs** of each major component in the **Toronto Water Main Break Analytics & Risk Platform**.  
 The goal is to make ownership and boundaries explicit, preventing overlap between ETL, ML, database, and BI layers.
 
 ---

@@ -1,4 +1,4 @@
-name: la_pipeline_failure_predict
+name: pipeline_failure_predict
 channels:
   - conda-forge
   - https://repo.anaconda.com/pkgs/main

@@ -1,6 +1,6 @@
 # Data Flow Architecture
 
-This document describes how data moves through the **LA Water Main Break Analytics & Risk Platform**, from raw public datasets to analytics-ready dashboards and ML-driven risk scores.
+This document describes how data moves through the **Toronto Water Main Break Analytics & Risk Platform**, from raw public datasets to analytics-ready dashboards and ML-driven risk scores.
 
 The data flow is intentionally **batch-oriented**, **database-centered**, and **BI-first**, reflecting how infrastructure analytics systems are implemented in real utility environments.
 
@@ -32,7 +32,7 @@ This section describes the complete lifecycle of data as it moves through the sy
 
 _**Source Data**
 
-- Los Angeles water main break records (public datasets)
+- Toronto water main break records (public datasets)
 - Climate data (NOAA / PRISM)
 - Soil and geotechnical reference layers
 

@@ -197,3 +197,6 @@ data/processed/*.parquet
 reports/figures/*.png
 reports/figures/*.jpg
 reports/figures/*.pdf
+reports/figures/*.svg
+reports/figures/*.eps
+reports/outputs/

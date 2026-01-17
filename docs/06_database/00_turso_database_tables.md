@@ -1,6 +1,6 @@
 # 📦 Recommended Turso Database Tables
 
-This document defines the recommended **v1 database schema** for the **LA Water Main Break Analytics & Risk Platform**.  
+This document defines the recommended **v1 database schema** for the **Toronto Water Main Break Analytics & Risk Platform**.  
 The schema is designed to support **analytics-first workflows**, **batch ML execution**, and **Power BI consumption**.
 
 ---
