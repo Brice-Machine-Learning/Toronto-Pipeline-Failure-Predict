@@ -2,7 +2,7 @@
 
 ## **Power BI + PostgreSQL + Python ETL**
 
-This project creates an analytics and visualization platform for **water main break trends** in Los Angeles, using **Power BI**, **PostgreSQL**, and **Python ETL pipelines**. It blends civil engineering domain knowledge with backend engineering and data analytics — aligned with how utilities manage infrastructure risk in practice.
+This project creates an analytics and visualization platform for **water main break trends** in Toronto, using **Power BI**, **PostgreSQL**, and **Python ETL pipelines**. It blends civil engineering domain knowledge with backend engineering and data analytics — aligned with how utilities manage infrastructure risk in practice.
 
 ---
 
@@ -46,7 +46,7 @@ You end up with a multi-layer portfolio piece.
 ## 🛠️ Recommended Architecture
 
 ```pgsql
-        LA Public Datasets
+        Public Datasets
             | (CSV/GeoJSON)
             ▼
         Python ETL Scripts
@@ -147,23 +147,55 @@ Contains:
 
 ## 🧩 Data Sources
 
-### **Water Main Breaks (LADWP)**
+### **Water Main Breaks**
 
-<https://catalog.data.gov/dataset/water-main-breaks-in-the-city-of-los-angeles-each-month>
+<https://www.toronto.ca/city-government/data-research-maps/open-data/>
+
+### **Infrastructure Age & Material**
+
+<https://www.toronto.ca/city-government/data-research-maps/open-data/>
+
+### **Hydrology & Watersheds**
+
+<https://www.toronto.ca/city-government/data-research-maps/open-data/>
+
+### **Toronto City Maps**
+
+<https://www.toronto.ca/city-government/data-research-maps/maps/>
 
 ### **GIS Water System Layers**
 
-<https://data.lacounty.gov>
+<https://www.toronto.ca/city-government/data-research-maps/open-data/learning-resources/>
+
+### **Neighborhood Boundaries**
+
+<https://www.toronto.ca/city-government/data-research-maps/open-data/>
+<https://www.toronto.ca/city-government/data-research-maps/neighbourhoods-communities/neighbourhood-profiles/find-your-neighbourhood/#location=&lat=&lng=&zoom=>
 
 ### **Soil & Geotechnical**
 
-<https://sdmdataaccess.sc.egov.usda.gov>
-<https://maps.conservation.ca.gov>
+<https://www.ontario.ca/page/soil-data>
+<https://library.torontomu.ca/gmdc/old-gmdc/geo-data/search-2/>
+<https://data.ontario.ca/dataset/ontario-geological-survey-geological-maps-and-digital-data-index>
+<https://www.geologyontario.mndm.gov.on.ca/ogsearth.html>
 
-### **Climate (NOAA + PRISM)**
+### **Soil Corrosivity**
 
-<https://www.ncei.noaa.gov>  
-<https://prism.oregonstate.edu>
+<https://www.nrcan.gc.ca/our-natural-resources/earth-sciences/geomatics/geospatial-products-services/soil-information/10985>
+<https://open.canada.ca/data/en/dataset/3c6f4f5e-2d17-4f10-8f10-5a2b2f2c6f3e>
+<https://data.ontario.ca/dataset/soil-survey-database-of-ontario>
+<https://www.ontario.ca/page/ontario-geological-survey>
+<https://natural-resources.canada.ca/>
+
+### **Climate**
+
+<https://en.climate-data.org/north-america/canada/ontario/toronto-53/>  
+<https://www.weather-atlas.com/en/canada/toronto-climate>
+<https://www.timeanddate.com/weather/canada/toronto/climate>
+<https://weatherandclimate.com/canada/ontario/toronto>  
+<https://climate.weather.gc.ca/>  
+<https://climatedata.ca/>
+<https://lamps.math.yorku.ca/OntarioClimate/>
 
 ---
 
