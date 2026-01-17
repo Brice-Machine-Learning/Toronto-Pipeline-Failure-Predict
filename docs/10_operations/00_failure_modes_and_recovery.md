@@ -1,6 +1,6 @@
 # Failure Modes and Recovery
 
-This document describes the **expected failure modes** within the **LA Water Main Break Analytics & Risk Platform**, along with **detection signals, impact, and recovery procedures**.
+This document describes the **expected failure modes** within the **Toronto Water Main Break Analytics & Risk Platform**, along with **detection signals, impact, and recovery procedures**.
 
 The goal is not to eliminate all failures, but to ensure failures are:
 

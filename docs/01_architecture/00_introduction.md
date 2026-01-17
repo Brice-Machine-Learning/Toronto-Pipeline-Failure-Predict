@@ -1,6 +1,6 @@
 # Architecture Introduction
 
-This document introduces the **architecture of the LA Water Main Break Analytics & Risk Platform** and explains the design decisions that govern how data moves through the system — from raw municipal datasets to analytics-ready dashboards and risk scores.
+This document introduces the **architecture of the Toronto Water Main Break Analytics & Risk Platform** and explains the design decisions that govern how data moves through the system — from raw municipal datasets to analytics-ready dashboards and risk scores.
 
 The architecture is intentionally designed to reflect **real-world utility analytics environments**, where data engineering, analytics, and business intelligence are tightly integrated, while machine learning is typically executed in **batch workflows**, not real-time services.
 

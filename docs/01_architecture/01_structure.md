@@ -1,7 +1,7 @@
 # Project Structure for Pipeline Break Prediction
 
 ```plaintext
-la_pipeline_failure_predict/
+pipeline_failure_predict/
 ├── README.md                   # Project overview and instructions
 ├── pyproject.toml              # Python project configuration file
 ├── requirements.txt            # Python dependencies file
@@ -15,7 +15,7 @@ la_pipeline_failure_predict/
 │   │   ├── gis/
 │   │   ├── soils/
 │   │   └── watermain_breaks/
-│   │       └── pipeline_breaks_la.csv
+│   │       └── pipeline_breaks.csv
 │   ├── interim/
 │   │   ├── climate/
 │   │   ├── gis/
@@ -55,22 +55,22 @@ la_pipeline_failure_predict/
 │   ├── model/
 │   │   ├── relationships.md
 │   │   ├── measures.md
-│   │   └── la_pipe_break_model.pbit
+│   │   └── pipeline_failure_model.pbit
 │   ├── reports/
-│   │   ├── la_pipeline_failure_overview.pbix
-│   │   ├── la_pipeline_failure_risk.pbix
-│   │   └── la_pipeline_failure_dashboard.pbix
+│   │   ├── pipeline_failure_overview.pbix
+│   │   ├── pipeline_failure_risk.pbix
+│   │   └── pipeline_failure_dashboard.pbix
 │   └── exports/
 │       ├── powerbi_export.sql
 │       ├── data_validation_checks.md
 │       └── refresh_notes.md
 │
-├── src/la_pipeline_failure_predict/    # Source code directory
+├── src/pipeline_failure_predict/    # Source code directory
 │   ├── __init__.py
 │   ├── api/                            # API clients
-│   │   └── la_client.py
+│   │   └── pipeline_failure_client.py
 │   ├── auth/                           # Authentication clients
-│   │   └── la_auth.py
+│   │   └── pipeline_failure_auth.py
 │   ├── config/                         # Configuration files
 │   │   └── settings.py
 │   ├── core/
@@ -145,7 +145,7 @@ la_pipeline_failure_predict/
 └── docs/                               # Documentation directory
     ├── 00_overview/
     │   ├── 00_project_overview.md
-    │   └── 01_la_water_main_break_analytics.md
+    │   └── 01_water_main_break_analytics.md
     │
     ├── 01_architecture/
     │   ├── 00_introduction.md
@@ -154,7 +154,7 @@ la_pipeline_failure_predict/
     │   └── 03_component_descriptions.md
     │
     ├── 02_data_sources/
-    │   └── 01_la_pipe_break_data_sources.md
+    │   └── 01_pipe_break_data_sources.md
     │
     ├── 03_notebooks/
     │   
@@ -188,7 +188,7 @@ la_pipeline_failure_predict/
 
 This structure is designed to facilitate the development, maintenance, and collaboration on the Pipeline Break Prediction project. Each directory serves a specific purpose, ensuring that code, data, documentation, and reports are organized logically.
 
-- `la_pipeline_failure_predict/`: Root directory of the project.
+- `pipeline_failure_predict/`: Root directory of the project.
 - `README.md`: Overview and instructions for the project.
 - `pyproject.toml`, `requirements.txt`, and `environment.yml`: Dependency management files.
 - `.gitignore`: Specifies files and directories to be ignored by Git.
@@ -198,20 +198,20 @@ This structure is designed to facilitate the development, maintenance, and colla
 - `schemas/`: YAML schema files defining the structure of features, models, data, risk scores, and Power BI exports.
 - `powerbi/`: Power BI project files including datasets, models, reports, and export notes.
 - `src/`: Source code for data processing, feature engineering, modeling, visualization, and utility functions.
-- `src/la_pipeline_failure_predict/`: Main package for the project containing submodules for different functionalities.
-- `src/la_pipeline_failure_predict/api/`: API client for interacting with Los Angeles data services.
-- `src/la_pipeline_failure_predict/config/`: Configuration settings for the project.
-- `src/la_pipeline_failure_predict/core/`: Core functionalities and initializations.
-- `src/la_pipeline_failure_predict/data/`: Data handling and geospatial utilities.
-- `src/la_pipeline_failure_predict/db/`: Database connection and query management.
-- `src/la_pipeline_failure_predict/etl/`: Extract, Transform, Load processes for data ingestion.
-- `src/la_pipeline_failure_predict/features/`: Feature engineering scripts.
-- `src/la_pipeline_failure_predict/log/`: Logging utilities.
-- `src/la_pipeline_failure_predict/models/`: Model training, prediction, and evaluation scripts.
-- `src/la_pipeline_failure_predict/static/`: Static files for the project.
-- `src/la_pipeline_failure_predict/templates/`: Template files for the project.
-- `src/la_pipeline_failure_predict/visualization/`: Visualization scripts for EDA, features, and risk mapping.
-- `src/la_pipeline_failure_predict/utils/`: Utility functions.
+- `src/pipeline_failure_predict/`: Main package for the project containing submodules for different functionalities.
+- `src/pipeline_failure_predict/api/`: API client for interacting with Los Angeles data services.
+- `src/pipeline_failure_predict/config/`: Configuration settings for the project.
+- `src/pipeline_failure_predict/core/`: Core functionalities and initializations.
+- `src/pipeline_failure_predict/data/`: Data handling and geospatial utilities.
+- `src/pipeline_failure_predict/db/`: Database connection and query management.
+- `src/pipeline_failure_predict/etl/`: Extract, Transform, Load processes for data ingestion.
+- `src/pipeline_failure_predict/features/`: Feature engineering scripts.
+- `src/pipeline_failure_predict/log/`: Logging utilities.
+- `src/pipeline_failure_predict/models/`: Model training, prediction, and evaluation scripts.
+- `src/pipeline_failure_predict/static/`: Static files for the project.
+- `src/pipeline_failure_predict/templates/`: Template files for the project.
+- `src/pipeline_failure_predict/visualization/`: Visualization scripts for EDA, features, and risk mapping.
+- `src/pipeline_failure_predict/utils/`: Utility functions.
 - `artifacts/`: Storage for trained models and model registry.
 - `reports/`: Generated reports and figures for analysis and documentation.
 - `docs/`: Documentation related to the project architecture and other relevant topics.

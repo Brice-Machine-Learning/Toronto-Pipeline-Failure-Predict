@@ -1,4 +1,4 @@
-# 🚰 Pipeline Break Prediction — Los Angeles Water
+# 🚰 Pipeline Break Prediction — Toronto Water
 
 ## Infrastructure Risk Modeling • Machine Learning • Geospatial Analytics
 
@@ -15,11 +15,11 @@
 
 ## 📌 Project Overview
 
-This project builds a **machine-learning–driven pipeline break risk platform** for the Los Angeles water distribution system using real, open municipal data.
+This project builds a **machine-learning–driven pipeline break risk platform** for the **City of Toronto water distribution system** using real, open municipal data.
 
 It combines **civil engineering domain knowledge**, **geospatial analytics**, and **modern data science** to model pipeline failure risk and deliver **actionable insights** for infrastructure planning, asset management, and capital prioritization.
 
-The system is designed as a **realistic analytics platform**, not a toy ML notebook — featuring batch ETL, persistent analytical storage, feature engineering pipelines, optional ML prediction, and BI-ready outputs.
+The system is designed as a **realistic analytics platform**, not a toy ML notebook — featuring batch ETL pipelines, persistent analytical storage, feature engineering workflows, optional ML prediction, and BI-ready outputs aligned with how utilities and consultants actually operate.
 
 ---
 
@@ -29,17 +29,17 @@ Urban water utilities face increasing pressure from:
 
 - aging buried infrastructure  
 - corrosive soils and geotechnical conditions  
-- climate-driven stress (rainfall, drought, temperature swings)  
+- climate-driven stress (freeze–thaw cycles, precipitation variability, temperature extremes)  
 - deferred maintenance and constrained capital budgets  
 
-Machine learning can help utilities:
+Applied machine learning can help utilities:
 
 - prioritize high-risk assets  
 - reduce break frequency and service disruptions  
 - justify capital investment decisions  
 - transition from reactive to proactive maintenance  
 
-This project demonstrates **how ML can be applied responsibly and defensibly** in infrastructure risk contexts — aligned with how utilities and consultants actually work.
+This project demonstrates **how ML can be applied responsibly and defensibly** in infrastructure risk contexts — grounded in real data availability, realistic workflows, and explainable outputs.
 
 ---
 
@@ -62,7 +62,7 @@ This is a **large, multi-layer project** that includes:
 - database-backed analytics  
 - batch ML workflows  
 - Power BI dashboards  
-- forward-looking API integration (FastAPI planned)
+- forward-looking API integration (FastAPI planned)  
 
 Because of this scope, the project structure is **intentionally documented**, not visualized inline.
 
@@ -74,23 +74,21 @@ Because of this scope, the project structure is **intentionally documented**, no
 
 ### 1️⃣ Data Acquisition & ETL
 
-- LADWP water main break datasets  
-- Climate data (NOAA, PRISM)  
-- Soil & corrosivity layers (USDA SSURGO, CA Geological Survey)  
-- Neighborhood and census geographies  
-- Automated ingestion and validation pipelines  
+- City of Toronto water main break datasets  
+- Water infrastructure asset metadata (age, material, diameter)  
+- Climate data (Environment and Climate Change Canada)  
+- Soil, geology, and corrosivity layers (Ontario Geological Survey, NRCan)  
+- Neighborhood and municipal geographies  
+- Automated ingestion, validation, and versioned ETL pipelines  
 
 ---
 
 ### 2️⃣ Exploratory Data Analysis (EDA)
 
 - break frequency distributions  
-- temporal seasonality  
+- temporal seasonality (monthly / annual)  
 - spatial patterns and clustering  
-- environmental factor correlations
-- temporal break trends  
-- spatial clustering and hotspots  
-- environmental correlations  
+- environmental and geotechnical correlations  
 - data quality checks and anomaly detection  
 
 ---
@@ -102,9 +100,9 @@ A hybrid civil engineering + data science approach:
 | Category | Example Features |
 | ------- | ---------------- |
 | Pipe Attributes | age, diameter, material |
-| Environmental | rainfall, drought index, temperature |
-| Geotechnical | soil corrosivity, shrink–swell |
-| Spatial | neighborhood, proximity indicators |
+| Environmental | precipitation, temperature, freeze–thaw frequency |
+| Geotechnical | soil corrosivity, geological units |
+| Spatial | neighborhood, watershed context |
 | Temporal | seasonality, lagged break history |
 
 ---
@@ -113,7 +111,7 @@ A hybrid civil engineering + data science approach:
 
 - Supervised learning (classification / regression)  
 - Time-aware train/test splits  
-- Gradient boosting + baselines  
+- Baseline models + gradient boosting  
 - SHAP-based interpretability  
 - Batch scoring (not real-time inference)  
 
@@ -128,9 +126,9 @@ Outputs:
 ### 5️⃣ Risk Scoring & Reporting
 
 - utility-style risk tiers  
-- ranked high-risk segments  
+- ranked high-risk segments or zones  
 - monthly / annual scoring runs  
-- BI-ready outputs  
+- BI-ready analytical outputs  
 
 ---
 
@@ -141,8 +139,8 @@ Planned dashboards include:
 - breaks over time  
 - environmental drivers  
 - geographic risk heatmaps  
-- neighborhood drilldowns  
-- ML-based risk ranking  
+- neighborhood-level drilldowns  
+- ML-based risk ranking and comparison  
 
 ---
 
@@ -193,7 +191,7 @@ This project follows **semantic versioning**, with each release representing a s
 | **v0.5.0** | Risk scoring framework + Power BI dashboards |
 | **v1.0.0** | End-to-end deployed analytics platform |
 
-Versions may evolve as data availability and scope mature, but architectural stability is maintained across releases.
+Architectural stability is maintained across versions even as features and datasets expand.
 
 ---
 

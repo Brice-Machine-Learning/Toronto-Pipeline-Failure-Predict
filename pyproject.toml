@@ -1,5 +1,5 @@
 [project]
-name = "la-pipeline-failure-predict"
+name = "toronto-pipeline-failure-predict"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"

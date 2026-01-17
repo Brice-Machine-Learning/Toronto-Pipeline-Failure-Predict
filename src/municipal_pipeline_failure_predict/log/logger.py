@@ -1,6 +1,6 @@
 # src/log/logger.py
 """
-Logging configuration for the LA pipeline failure prediction project."""
+Logging configuration for the Toronto pipeline failure prediction project."""
 
 import logging
 from municipal_pipeline_failure_predict.config.settings import settings
