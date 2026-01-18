@@ -41,9 +41,9 @@ pipeline_failure_predict/
 │   │   ├── 04_eda_climate_data.ipynb
 │   │   └── 99_eda_summary.ipynb
 │   ├── 02_feature_engineering/                     # Feature Engineering
-│   │   ├── 01_features_spatial_aggregation.ipynb
-│   │   ├── 02_features_temporal_aggregation.ipynb
-│   │   └── 03_features_joined_table.ipynb
+│   │   ├── 01_features_spatial_aggregation.ipynb   # Where features are aggregated spatially
+│   │   ├── 02_features_temporal_aggregation.ipynb  # Where features are aggregated temporally (time-based)
+│   │   └── 03_features_joined_table.ipynb          # Where features are joined into final table
 │   ├── 03_model_training/                          # Model Training
 │   │   ├── 01_baseline_poisson.ipynb
 │   │   └── 02_logistic_regression.ipynb
