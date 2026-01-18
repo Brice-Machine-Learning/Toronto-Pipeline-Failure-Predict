@@ -15,6 +15,7 @@ Below is a curated, **high-quality** set of datasets — with descriptions, dire
 
 **Link:**  
 <https://www.toronto.ca/city-government/data-research-maps/open-data/>
+<https://open.toronto.ca/dataset/watermain-breaks/>  # Click on the `For Developers` tab for API access information. SHP format also available.
 
 **What it contains:**
 
@@ -43,7 +44,7 @@ Below is a curated, **high-quality** set of datasets — with descriptions, dire
 
 **Link:**  
 <https://www.toronto.ca/city-government/data-research-maps/open-data/>
-
+<https://open.toronto.ca/dataset/watermain-breaks/>  # Click on the `For Developers` tab for API access information. SHP format also available.
 **What it contains:**
 
 - Water main alignments  
