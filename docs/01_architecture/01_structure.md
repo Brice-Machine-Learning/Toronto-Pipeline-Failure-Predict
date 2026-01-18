@@ -31,13 +31,28 @@ pipeline_failure_predict/
 │   └── external/
 │       └── soils_layers/
 │
-├── notebooks/                          # Jupyter notebooks
-│   ├── 00_baseline.ipynb               # Baseline Analysis
-│   ├── 01_eda.ipynb                    # Exploratory Data Analysis
-│   ├── 02_feature_engineering.ipynb    # Feature Engineering
-│   ├── 03_model_training.ipynb         # Model Training
-│   ├── 04_evaluation.ipynb             # Model Evaluation
-│   └── 05_risk_scoring.ipynb           # Risk Scoring
+├── notebooks/                                      # Jupyter notebooks
+│   ├── 00_baseline/                                # Baseline Analysis
+│   │   └── 00_problem_framing.ipynb
+│   ├── 01_eda/                                     # Exploratory Data Analysis
+│   │   ├── 01_eda_watermain_breaks.ipynb
+│   │   ├── 02_eda_watermain_data.ipynb
+│   │   ├── 03_eda_soil_data.ipynb
+│   │   ├── 04_eda_climate_data.ipynb
+│   │   └── 99_eda_summary.ipynb
+│   ├── 02_feature_engineering/                     # Feature Engineering
+│   │   ├── 01_features_spatial_aggregation.ipynb
+│   │   ├── 02_features_temporal_aggregation.ipynb
+│   │   └── 03_features_joined_table.ipynb
+│   ├── 03_model_training/                          # Model Training
+│   │   ├── 01_baseline_poisson.ipynb
+│   │   └── 02_logistic_regression.ipynb
+│   ├── 04_evaluation/                              # Model Evaluation
+│   │   ├── 01_evaluation_metrics.ipynb
+│   │   └── 02_error_analysis.ipynb
+│   └── 05_risk_scoring/                            # Risk Scoring
+│       ├── 01_risk_score_calculation.ipynb
+│       └── 02_risk_maps.ipynb
 │
 ├── schemas/                        # Schema definitions
 │   ├── features_schema.yaml
@@ -55,7 +70,7 @@ pipeline_failure_predict/
 │   ├── model/
 │   │   ├── relationships.md
 │   │   ├── measures.md
-│   │   └── pipeline_failure_model.pbit
+│   │   └── pipeline_failure_model.pbix
 │   ├── reports/
 │   │   ├── pipeline_failure_overview.pbix
 │   │   ├── pipeline_failure_risk.pbix
@@ -65,7 +80,7 @@ pipeline_failure_predict/
 │       ├── data_validation_checks.md
 │       └── refresh_notes.md
 │
-├── src/pipeline_failure_predict/    # Source code directory
+├── src/pipeline_failure_predict/       # Source code directory
 │   ├── __init__.py
 │   ├── api/                            # API clients
 │   │   └── pipeline_failure_client.py
