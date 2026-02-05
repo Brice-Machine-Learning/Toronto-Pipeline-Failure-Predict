@@ -1,7 +1,7 @@
 # Project Structure for Pipeline Break Prediction
 
 ```plaintext
-pipeline_failure_predict/
+municipal_pipeline_failure_predict/
 ├── README.md                   # Project overview and instructions
 ├── pyproject.toml              # Python project configuration file
 ├── requirements.txt            # Python dependencies file

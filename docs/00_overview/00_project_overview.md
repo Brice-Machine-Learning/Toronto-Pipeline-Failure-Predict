@@ -2,7 +2,7 @@
 
 This project focuses on building a realistic, end-to-end analytics workflow using publicly available municipal data to examine where, when, and why water main breaks occur in Los Angeles. Rather than emphasizing isolated visualizations or experimental modeling, the platform prioritizes data quality, analytical structure, and stakeholder-ready insights, reflecting how infrastructure analytics are implemented in professional utility and consulting environments.
 
-## LA Water Main Break Analytics & Risk Platform
+## Municipal Water Main Break Analytics & Risk Platform
 
 This project delivers a **production-style analytics platform** for analyzing **water main break patterns** across Los Angeles. It integrates **Power BI**, **PostgreSQL**, and **Python-based ETL pipelines** to transform raw municipal datasets into **decision-ready dashboards** that support infrastructure planning, risk assessment, and capital prioritization.
 
