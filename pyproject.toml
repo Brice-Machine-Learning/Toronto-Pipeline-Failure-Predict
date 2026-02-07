@@ -28,3 +28,10 @@ reports = [
     "seaborn>=0.13.2",
 ]
 
+[tool.ruff]
+line-length = 160
+target-version = "py312"
+extend-exclude = [
+    "notebooks/",
+]
+
