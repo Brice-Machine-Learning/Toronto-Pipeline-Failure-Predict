@@ -5,6 +5,7 @@ These tests verify that the package installs correctly and that
 core modules can be imported without triggering runtime errors.
 """
 
+
 def test_package_import():
     import municipal_pipeline_failure_predict  # noqa: F401
 

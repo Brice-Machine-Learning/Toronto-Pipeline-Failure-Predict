@@ -46,4 +46,3 @@ def ingest_water_main_breaks() -> Optional[pd.DataFrame]:
         return None
 
     return df
-

@@ -1,4 +1,4 @@
-""" 
+"""
 scripts/init_quarto_stubs.py
 ------------------------------
 
@@ -10,12 +10,15 @@ from pathlib import Path
 
 REPORTS_DIR = Path("reports")
 
+
 def title_from_filename(path: Path) -> str:
     name = path.stem.replace("_", " ").replace("-", " ").title()
     return name
 
+
 def has_front_matter(text: str) -> bool:
     return text.lstrip().startswith("---")
+
 
 def generate_index_body(title: str) -> str:
     return f"""---
@@ -27,6 +30,7 @@ This section presents materials related to **{title}**.
 Subsections provide detailed analysis, supporting data,
 and relevant discussion for this topic.
 """
+
 
 def generate_page_body(title: str) -> str:
     return f"""---
@@ -40,6 +44,7 @@ TODO:
 - Insert analysis and figures
 -->
 """
+
 
 def main():
     qmd_files = REPORTS_DIR.rglob("*.qmd")
@@ -59,6 +64,7 @@ def main():
 
         file.write_text(new_text, encoding="utf-8")
         print(f"Initialized: {file}")
+
 
 if __name__ == "__main__":
     main()

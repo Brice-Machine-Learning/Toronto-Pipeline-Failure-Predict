@@ -5,6 +5,8 @@ Settings configuration for the Municipal Pipeline Failure Prediction project.
 
 from pydantic_settings import BaseSettings
 from pathlib import Path
+
+
 class Settings(BaseSettings):
     # Project metadata
     PROJECT_NAME: str = "Municipal Pipeline Failure Prediction"
@@ -28,5 +30,6 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = ".env"
+
 
 settings = Settings()
