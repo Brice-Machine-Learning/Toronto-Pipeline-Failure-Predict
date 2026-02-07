@@ -1,112 +1,182 @@
 # src/api/municipal_client.py
 """
-API client for interacting with the City of Toronto Open Data services.
+Toronto Open Data API client.
 
-Toronto data is primarily served via:
-- CKAN API (metadata + resource discovery)
-- Direct dataset URLs (CSV / GeoJSON downloads)
+This client provides a thin, explicit interface over Toronto's CKAN-based
+Open Data portal. It is intentionally minimal and focused on:
 
-This client supports:
-- CKAN package discovery
-- Direct dataset retrieval
+- Dataset discovery via CKAN
+- Dataset metadata retrieval
+- Resource URL extraction for downstream ingestion
+
+It does not perform data downloading or transformation. Those concerns
+belong in ingestion pipelines, not the API client layer.
 """
 
+from typing import Any, Dict, Optional, List
 import requests
-from typing import Dict, Any, Optional
-from municipal_pipeline_failure_predict.config import settings
 
 
 class TorontoOpenDataClient:
     """
-    Lightweight client for City of Toronto Open Data.
+    Client for interacting with the City of Toronto Open Data CKAN API.
 
-    Handles:
-    - CKAN metadata queries
-    - Dataset resource lookup
-    - JSON / CSV endpoint access
+    CKAN concepts:
+    - Package: a dataset (e.g. "water-main-breaks")
+    - Resource: a downloadable file within a dataset (CSV, GeoJSON, etc.)
     """
 
     CKAN_BASE_URL = "https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action"
 
-    def __init__(self, timeout: int = 15):
+    def __init__(self, timeout: int = 15) -> None:
+        """
+        Parameters
+        ----------
+        timeout : int
+            Request timeout in seconds. Applied to all API calls.
+        """
         self.timeout = timeout
 
     # ------------------------------------------------------------------
-    # Core CKAN helpers
+    # Internal helpers
     # ------------------------------------------------------------------
 
-    def _get(self, url: str, params: Optional[Dict[str, Any]] = None) -> Any:
-        """Generic GET wrapper with basic error handling."""
+    def _get(self, endpoint: str, params: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, Any]]:
+        """
+        Execute a GET request against a CKAN action endpoint.
+
+        This method centralizes error handling and ensures consistent
+        response parsing across all client operations.
+        """
+        url = f"{self.CKAN_BASE_URL}/{endpoint}"
+
         try:
             response = requests.get(url, params=params, timeout=self.timeout)
             response.raise_for_status()
-            return response.json()
-        except requests.exceptions.HTTPError as e:
-            print(f"❌ HTTP error: {e} — URL: {url}")
-        except requests.exceptions.RequestException as e:
-            print(f"❌ Request failed: {e}")
-        except ValueError:
-            print("❌ Failed to parse JSON response")
-        return None
+            payload = response.json()
+        except requests.exceptions.RequestException as exc:
+            print(f"❌ CKAN request failed: {exc}")
+            return None
+
+        if not payload.get("success", False):
+            print(f"❌ CKAN API returned success=false for endpoint={endpoint}")
+            return None
+
+        return payload
 
     # ------------------------------------------------------------------
-    # CKAN dataset discovery
+    # Dataset discovery
     # ------------------------------------------------------------------
 
-    def list_datasets(self, query: Optional[str] = None) -> Any:
+    def search_datasets(self, query: str) -> Optional[Dict[str, Any]]:
         """
-        Search Toronto Open Data datasets.
+        Search datasets by keyword.
 
-        Example:
-            client.list_datasets(query="water main")
-        """
-        url = f"{self.CKAN_BASE_URL}/package_search"
-        params = {"q": query} if query else {}
-        return self._get(url, params=params)
+        Parameters
+        ----------
+        query : str
+            Free-text search term (e.g. "water main").
 
-    def get_dataset_metadata(self, dataset_id: str) -> Any:
+        Returns
+        -------
+        dict or None
+            CKAN search results payload.
         """
-        Fetch dataset metadata by CKAN package ID.
+        return self._get(
+            endpoint="package_search",
+            params={"q": query},
+        )
 
-        Example dataset_id:
-            "water-main-breaks"
+    def get_dataset_metadata(self, dataset_id: str) -> Optional[Dict[str, Any]]:
         """
-        url = f"{self.CKAN_BASE_URL}/package_show"
-        params = {"id": dataset_id}
-        return self._get(url, params=params)
+        Retrieve full metadata for a CKAN dataset (package).
+
+        Parameters
+        ----------
+        dataset_id : str
+            CKAN package ID (URL slug), not the title.
+            Example: "water-main-breaks"
+        """
+        return self._get(
+            endpoint="package_show",
+            params={"id": dataset_id},
+        )
 
     # ------------------------------------------------------------------
     # Domain-specific helpers
     # ------------------------------------------------------------------
 
-    def get_water_main_breaks_metadata(self) -> Any:
+    def get_water_main_breaks_metadata(self) -> Optional[Dict[str, Any]]:
         """
         Retrieve metadata for the Water Main Breaks dataset.
 
-        This returns resource URLs (CSV, GeoJSON, etc.)
-        that should be used for ingestion.
+        This method exists to anchor domain intent in code and avoid
+        scattering dataset IDs across the codebase.
         """
-        dataset_id = "water-main-breaks"
-        return self.get_dataset_metadata(dataset_id)
+        return self.get_dataset_metadata("water-main-breaks")
 
-    def extract_resource_url(
+    def list_resources(self, metadata: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """
+        Extract the resource list from a dataset metadata payload.
+
+        Returns an empty list if metadata is malformed or incomplete.
+        """
+        try:
+            return metadata["result"]["resources"]
+        except (TypeError, KeyError):
+            return []
+
+    def find_resource_by_format(
         self,
         metadata: Dict[str, Any],
-        format_preference: str = "CSV"
+        format_preference: str,
+        datastore_only: bool = False,
+    ) -> Optional[Dict[str, Any]]:
+        """
+        Locate a dataset resource matching a desired format.
+
+        Parameters
+        ----------
+        format_preference : str
+            Desired resource format (e.g. "CSV", "GEOJSON").
+        datastore_only : bool
+            If True, only return resources backed by CKAN's datastore.
+
+        Returns
+        -------
+        dict or None
+            Matching resource metadata.
+        """
+        format_preference = format_preference.upper()
+
+        for resource in self.list_resources(metadata):
+            if resource.get("format", "").upper() != format_preference:
+                continue
+
+            if datastore_only and not resource.get("datastore_active", False):
+                continue
+
+            return resource
+
+        return None
+
+    def get_resource_download_url(
+        self,
+        metadata: Dict[str, Any],
+        format_preference: str = "CSV",
     ) -> Optional[str]:
         """
-        Extract a resource download URL from dataset metadata.
+        Retrieve the direct download URL for a dataset resource.
 
-        Example formats:
-            CSV, GEOJSON, SHP
+        This URL should be passed to ingestion logic, not fetched here.
         """
-        if not metadata or not metadata.get("result"):
+        resource = self.find_resource_by_format(
+            metadata=metadata,
+            format_preference=format_preference,
+        )
+
+        if not resource:
+            print(f"⚠️ No resource found with format={format_preference}")
             return None
 
-        resources = metadata["result"].get("resources", [])
-        for r in resources:
-            if r.get("format", "").upper() == format_preference.upper():
-                return r.get("url")
-
-        print(f"⚠️ No resource found with format={format_preference}")
-        return None
+        return resource.get("url")
