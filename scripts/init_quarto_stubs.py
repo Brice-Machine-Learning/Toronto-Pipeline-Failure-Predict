@@ -6,7 +6,7 @@ Script to initialize Quarto stubs for reports.
 """
 
 from pathlib import Path
-import re
+
 
 REPORTS_DIR = Path("reports")
 

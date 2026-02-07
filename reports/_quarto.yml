@@ -5,7 +5,7 @@ project:
     port: 4200
 
 website:
-  title: "LA Pipeline Failure Analytics"
+  title: "Toronto Pipeline Failure Analytics"
   sidebar:
     style: "docked"
     search: true

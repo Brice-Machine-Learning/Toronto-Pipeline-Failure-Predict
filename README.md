@@ -19,7 +19,7 @@ This project builds a **machine-learning–driven pipeline break risk platform**
 
 It combines **civil engineering domain knowledge**, **geospatial analytics**, and **modern data science** to model pipeline failure risk and deliver **actionable insights** for infrastructure planning, asset management, and capital prioritization.
 
-The system is designed as a **realistic analytics platform**, not a toy ML notebook — featuring batch ETL pipelines, persistent analytical storage, feature engineering workflows, optional ML prediction, and BI-ready outputs aligned with how utilities and consultants actually operate.
+The system is designed as a **realistic analytics platform**, not a toy ML notebook. This project features batch ETL pipelines, persistent analytical storage, feature engineering workflows, ML prediction, and Power BI-ready outputs aligned with how utilities and consultants actually operate.
 
 ---
 
@@ -39,7 +39,7 @@ Applied machine learning can help utilities:
 - justify capital investment decisions  
 - transition from reactive to proactive maintenance  
 
-This project demonstrates **how ML can be applied responsibly and defensibly** in infrastructure risk contexts — grounded in real data availability, realistic workflows, and explainable outputs.
+This project demonstrates **how ML can be applied responsibly and defensibly** in infrastructure risk contexts, grounded in real data availability, realistic workflows, and explainable outputs.
 
 ---
 
