@@ -33,26 +33,36 @@ municipal_pipeline_failure_predict/
 │
 ├── notebooks/                                      # Jupyter notebooks
 │   ├── 00_baseline/                                # Baseline Analysis
-│   │   └── 00_problem_framing.ipynb
+│   │   ├── README_baseline.md                      # Inputs, outputs, changes allowed, out of scope items
+│   │   ├── 00_data_ingestion_watermain_breaks.ipynb
+│   │   ├── 01_data_ingestion_watermain_data.ipynb
+│   │   ├── 02_data_ingestion_soil.ipynb
+│   │   ├── 03_data_ingestion_climate.ipynb
+│   │   └── 04_problem_framing.ipynb                # Target definition, temporal granularity, spatial unit, known limitations
 │   ├── 01_eda/                                     # Exploratory Data Analysis
-│   │   ├── 01_eda_watermain_breaks.ipynb
-│   │   ├── 02_eda_watermain_data.ipynb
-│   │   ├── 03_eda_soil_data.ipynb
-│   │   ├── 04_eda_climate_data.ipynb
+│   │   ├── README_eda.md                           # Inputs, outputs, changes allowed, out of scope items
+│   │   ├── 00_eda_watermain_breaks.ipynb
+│   │   ├── 01_eda_watermain_data.ipynb
+│   │   ├── 02_eda_soil_data.ipynb
+│   │   ├── 03_eda_climate_data.ipynb
 │   │   └── 99_eda_summary.ipynb
 │   ├── 02_feature_engineering/                     # Feature Engineering
-│   │   ├── 01_features_spatial_aggregation.ipynb   # Where features are aggregated spatially
-│   │   ├── 02_features_temporal_aggregation.ipynb  # Where features are aggregated temporally (time-based)
-│   │   └── 03_features_joined_table.ipynb          # Where features are joined into final table
+│   │   ├── README_feature_engineering.md           # Inputs, outputs, changes allowed, out of scope items
+│   │   ├── 00_features_spatial_aggregation.ipynb   # Where features are aggregated spatially
+│   │   ├── 01_features_temporal_aggregation.ipynb  # Where features are aggregated temporally (time-based)
+│   │   └── 02_features_joined_table.ipynb          # Where features are joined into final table
 │   ├── 03_model_training/                          # Model Training
-│   │   ├── 01_baseline_poisson.ipynb
-│   │   └── 02_logistic_regression.ipynb
+│   │   ├── README_model_training.md                # Inputs, outputs, changes allowed, out of scope items
+│   │   ├── 00_baseline_poisson.ipynb
+│   │   └── 01_logistic_regression.ipynb
 │   ├── 04_evaluation/                              # Model Evaluation
-│   │   ├── 01_evaluation_metrics.ipynb
-│   │   └── 02_error_analysis.ipynb
+│   │   ├── README_evaluation.md                    # Inputs, outputs, changes allowed, out of scope items
+│   │   ├── 00_evaluation_metrics.ipynb
+│   │   └── 01_error_analysis.ipynb
 │   └── 05_risk_scoring/                            # Risk Scoring
-│       ├── 01_risk_score_calculation.ipynb
-│       └── 02_risk_maps.ipynb
+│       ├── README_risk_scoring.md                  # Inputs, outputs, changes allowed, out of scope items
+│       ├── 00_risk_score_calculation.ipynb
+│       └── 01_risk_maps.ipynb
 │
 ├── schemas/                        # Schema definitions
 │   ├── features_schema.yaml
