@@ -2,7 +2,7 @@
 
 ## Purpose of This Document
 
-This document defines the **versioning strategy** for the LA Pipeline Break Analytics & Risk Platform.  
+This document defines the **versioning strategy** for the Toronto Pipeline Break Analytics & Risk Platform.  
 Its goal is to clearly communicate how the project evolves over time, what each version represents, and how capabilities are introduced in a **controlled, intentional manner**.
 
 Versioning is used to:

@@ -1,7 +1,7 @@
 # Project Structure for Pipeline Break Prediction
 
 ```plaintext
-municipal_pipeline_failure_predict/
+toronto_pipeline_failure_predict/
 ├── README.md                   # Project overview and instructions
 ├── pyproject.toml              # Python project configuration file
 ├── requirements.txt            # Python dependencies file
@@ -90,7 +90,7 @@ municipal_pipeline_failure_predict/
 │       ├── data_validation_checks.md
 │       └── refresh_notes.md
 │
-├── src/pipeline_failure_predict/       # Source code directory
+├── src/toronto_pipeline_failure_predict/       # Source code directory
 │   ├── __init__.py
 │   ├── api/                            # API clients
 │   │   └── pipeline_failure_client.py
@@ -213,7 +213,7 @@ municipal_pipeline_failure_predict/
 
 This structure is designed to facilitate the development, maintenance, and collaboration on the Pipeline Break Prediction project. Each directory serves a specific purpose, ensuring that code, data, documentation, and reports are organized logically.
 
-- `pipeline_failure_predict/`: Root directory of the project.
+- `toronto_pipeline_failure_predict/`: Root directory of the project.
 - `README.md`: Overview and instructions for the project.
 - `pyproject.toml`, `requirements.txt`, and `environment.yml`: Dependency management files.
 - `.gitignore`: Specifies files and directories to be ignored by Git.
@@ -223,20 +223,20 @@ This structure is designed to facilitate the development, maintenance, and colla
 - `schemas/`: YAML schema files defining the structure of features, models, data, risk scores, and Power BI exports.
 - `powerbi/`: Power BI project files including datasets, models, reports, and export notes.
 - `src/`: Source code for data processing, feature engineering, modeling, visualization, and utility functions.
-- `src/pipeline_failure_predict/`: Main package for the project containing submodules for different functionalities.
-- `src/pipeline_failure_predict/api/`: API client for interacting with Los Angeles data services.
-- `src/pipeline_failure_predict/config/`: Configuration settings for the project.
-- `src/pipeline_failure_predict/core/`: Core functionalities and initializations.
-- `src/pipeline_failure_predict/data/`: Data handling and geospatial utilities.
-- `src/pipeline_failure_predict/db/`: Database connection and query management.
-- `src/pipeline_failure_predict/etl/`: Extract, Transform, Load processes for data ingestion.
-- `src/pipeline_failure_predict/features/`: Feature engineering scripts.
-- `src/pipeline_failure_predict/log/`: Logging utilities.
-- `src/pipeline_failure_predict/models/`: Model training, prediction, and evaluation scripts.
-- `src/pipeline_failure_predict/static/`: Static files for the project.
-- `src/pipeline_failure_predict/templates/`: Template files for the project.
-- `src/pipeline_failure_predict/visualization/`: Visualization scripts for EDA, features, and risk mapping.
-- `src/pipeline_failure_predict/utils/`: Utility functions.
+- `src/toronto_pipeline_failure_predict/`: Main package for the project containing submodules for different functionalities.
+- `src/toronto_pipeline_failure_predict/api/`: API client for interacting with Los Angeles data services.
+- `src/toronto_pipeline_failure_predict/config/`: Configuration settings for the project.
+- `src/toronto_pipeline_failure_predict/core/`: Core functionalities and initializations.
+- `src/toronto_pipeline_failure_predict/data/`: Data handling and geospatial utilities.
+- `src/toronto_pipeline_failure_predict/db/`: Database connection and query management.
+- `src/toronto_pipeline_failure_predict/etl/`: Extract, Transform, Load processes for data ingestion.
+- `src/toronto_pipeline_failure_predict/features/`: Feature engineering scripts.
+- `src/toronto_pipeline_failure_predict/log/`: Logging utilities.
+- `src/toronto_pipeline_failure_predict/models/`: Model training, prediction, and evaluation scripts.
+- `src/toronto_pipeline_failure_predict/static/`: Static files for the project.
+- `src/toronto_pipeline_failure_predict/templates/`: Template files for the project.
+- `src/toronto_pipeline_failure_predict/visualization/`: Visualization scripts for EDA, features, and risk mapping.
+- `src/toronto_pipeline_failure_predict/utils/`: Utility functions.
 - `artifacts/`: Storage for trained models and model registry.
 - `reports/`: Generated reports and figures for analysis and documentation.
 - `docs/`: Documentation related to the project architecture and other relevant topics.

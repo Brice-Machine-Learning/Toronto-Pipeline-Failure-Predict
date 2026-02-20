@@ -2,7 +2,7 @@
 
 ## Purpose of This Document
 
-This document defines **explicit non-goals** for the LA Pipeline Break Analytics & Risk Platform.  
+This document defines **explicit non-goals** for the Toronto Pipeline Break Analytics & Risk Platform.  
 Its purpose is to **prevent scope creep**, clarify delivery boundaries, and ensure that the project remains aligned with its intended **analytics-first** objectives.
 
 The exclusions below are **intentional design decisions**, not technical limitations.

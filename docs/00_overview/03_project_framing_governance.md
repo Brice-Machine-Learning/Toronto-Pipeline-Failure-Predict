@@ -2,7 +2,7 @@
 
 ## 1. Project Purpose
 
-The **LA Pipeline Break Analytics & Risk Platform** is intended to serve as a **production-style analytics system** that enables stakeholders to understand **where, when, and why water main breaks occur** across Los Angeles using publicly available municipal data.
+The **Toronto Pipeline Break Analytics & Risk Platform** is intended to serve as a **production-style analytics system** that enables stakeholders to understand **where, when, and why water main breaks occur** across Toronto using publicly available municipal data.
 
 The platform is designed to support **infrastructure planning, risk awareness, and capital prioritization** by transforming raw break records and environmental datasets into **decision-ready analytics and dashboards**.
 

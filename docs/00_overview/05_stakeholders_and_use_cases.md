@@ -2,7 +2,7 @@
 
 ## Purpose of This Document
 
-This document identifies the **primary stakeholders** for the LA Pipeline Break Analytics & Risk Platform and defines the **analytical use cases** the platform is intended to support.
+This document identifies the **primary stakeholders** for the Toronto Pipeline Break Analytics & Risk Platform and defines the **analytical use cases** the platform is intended to support.
 
 The goal is to ensure that all analytics, data modeling, and visualization decisions are traceable to **real user needs**, rather than abstract technical objectives.
 

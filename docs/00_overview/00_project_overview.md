@@ -1,10 +1,10 @@
 # 📊 Project Overview  
 
-This project focuses on building a realistic, end-to-end analytics workflow using publicly available municipal data to examine where, when, and why water main breaks occur in Los Angeles. Rather than emphasizing isolated visualizations or experimental modeling, the platform prioritizes data quality, analytical structure, and stakeholder-ready insights, reflecting how infrastructure analytics are implemented in professional utility and consulting environments.
+This project focuses on building a realistic, end-to-end analytics workflow using publicly available municipal data to examine where, when, and why water main breaks occur in Toronto. Rather than emphasizing isolated visualizations or experimental modeling, the platform prioritizes data quality, analytical structure, and stakeholder-ready insights, reflecting how infrastructure analytics are implemented in professional utility and consulting environments.
 
 ## Municipal Water Main Break Analytics & Risk Platform
 
-This project delivers a **production-style analytics platform** for analyzing **water main break patterns** across Los Angeles. It integrates **Power BI**, **PostgreSQL**, and **Python-based ETL pipelines** to transform raw municipal datasets into **decision-ready dashboards** that support infrastructure planning, risk assessment, and capital prioritization.
+This project delivers a **production-style analytics platform** for analyzing **water main break patterns** across Toronto. It integrates **Power BI**, **PostgreSQL**, and **Python-based ETL pipelines** to transform raw municipal datasets into **decision-ready dashboards** that support infrastructure planning, risk assessment, and capital prioritization.
 
 The platform is designed to reflect how utilities and engineering consultants analyze asset failures in practice — combining **historical break data**, **environmental drivers**, and **geospatial context** into a unified analytical model.
 
@@ -29,7 +29,7 @@ The objective is not a one-off dashboard, but a **maintainable, extensible analy
 
 The platform performs the following core functions:
 
-- Ingests and cleans public **water main break records** from Los Angeles  
+- Ingests and cleans public **water main break records** from Toronto  
 - Aggregates events to consistent **monthly and geographic units**  
 - Enriches break data with:
   - climate indicators (rainfall, temperature, drought conditions)  

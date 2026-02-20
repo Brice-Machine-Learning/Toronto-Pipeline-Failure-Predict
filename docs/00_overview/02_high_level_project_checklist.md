@@ -3,7 +3,7 @@
 ## High-Level Project Checklist (Phased)
 
 This checklist defines a **production-style delivery plan** for building an
-end-to-end analytics and risk modeling platform for Los Angeles water pipeline
+end-to-end analytics and risk modeling platform for Toronto water pipeline
 breaks. The phases are intentionally ordered to reflect **real-world data
 engineering and analytics workflows**, not notebook-driven experimentation.
 
