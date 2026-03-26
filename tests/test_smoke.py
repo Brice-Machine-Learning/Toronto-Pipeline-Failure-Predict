@@ -7,11 +7,11 @@ core modules can be imported without triggering runtime errors.
 
 
 def test_package_import():
-    import municipal_pipeline_failure_predict  # noqa: F401
+    import toronto_pipeline_failure_predict  # noqa: F401
 
 
 def test_api_client_import():
-    from municipal_pipeline_failure_predict.api.municipal_client import (
+    from toronto_pipeline_failure_predict.api.toronto_client import (
         TorontoOpenDataClient,
     )
 

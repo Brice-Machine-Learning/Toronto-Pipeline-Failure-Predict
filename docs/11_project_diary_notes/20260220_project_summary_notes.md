@@ -82,7 +82,7 @@ def ingest_water_main_breaks() -> Optional[pd.DataFrame]
 **Settings Object:**
 
 ```python
-from municipal_pipeline_failure_predict.config.settings import settings
+from toronto_pipeline_failure_predict.config.settings import settings
 ```
 
 ---
@@ -103,7 +103,7 @@ from municipal_pipeline_failure_predict.config.settings import settings
 **Usage:**
 
 ```python
-from municipal_pipeline_failure_predict.log.logger import logger
+from toronto_pipeline_failure_predict.log.logger import logger
 ```
 
 ---
