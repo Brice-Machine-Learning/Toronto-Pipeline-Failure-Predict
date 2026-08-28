@@ -243,4 +243,4 @@ The project is being built with **senior-level structure and documentation stand
 
 All design decisions, architecture diagrams, data flow explanations, and operational considerations live in the `/docs` directory.
 
-👉 **Start here:** `docs/00_overview/00_project_overview.md`
+👉 **Start here:** `docs/00-0_overview/00_project_overview.md`

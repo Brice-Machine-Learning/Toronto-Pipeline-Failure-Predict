@@ -130,7 +130,7 @@ from toronto_pipeline_failure_predict.log.logger import logger
 - API client design and usage (`docs/16_api/`)
 - ETL downloader patterns (`docs/17_etl/`)
 - Project overview, architecture, data flow
-- Phase-based project checklist (`docs/00_overview/02_high_level_project_checklist.md`)
+- Phase-based project checklist (`../00-0_overview/02_high_level_project_checklist.md`)
 - Data sources documentation
 - Database planning (Turso/DuckDB)
 - Risk scoring framework
@@ -212,7 +212,7 @@ The code cannot yet:
 
 ## 📍 Project Status vs. Checklist
 
-According to the project checklist (`docs/00_overview/02_high_level_project_checklist.md`):
+According to the project checklist (`../00-0_overview/02_high_level_project_checklist.md`):
 
 | Phase | Status | Notes |
 | ------- | -------- | ------- |
