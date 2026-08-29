@@ -17,17 +17,13 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Upgrade pip
-        run: |
-          python -m pip install --upgrade pip
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
 
-      - name: Install project (editable)
+      - name: Install dependencies
         run: |
-          pip install -e .
-
-      - name: Install linting tools
-        run: |
-          pip install ruff
+          uv pip install --system -e .
+          uv pip install --system ruff
 
       - name: Lint codebase
         run: |
@@ -36,6 +32,6 @@ jobs:
       - name: Import smoke test
         run: |
           python - <<EOF
-          import municipal_pipeline_failure_predict
+          import toronto_pipeline_failure_predict
           print("Import successful")
           EOF
