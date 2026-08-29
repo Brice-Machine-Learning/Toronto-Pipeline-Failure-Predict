@@ -22,16 +22,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv pip install --system -e .
-          uv pip install --system ruff
+          uv sync --group dev
 
       - name: Lint codebase
         run: |
-          ruff check .
+          uv run ruff check .
 
       - name: Import smoke test
         run: |
-          python - <<EOF
+          uv run python - <<EOF
           import toronto_pipeline_failure_predict
           print("Import successful")
           EOF
