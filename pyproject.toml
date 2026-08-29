@@ -24,7 +24,7 @@ where = ["src"]
 
 [dependency-groups]
 dev = [
-    "ruff>=0.6.0",
+    "ruff==0.15.0",
     "pytest>=8.0.0",
     "pre-commit>=3.7.0",
 ]
