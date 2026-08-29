@@ -10,7 +10,7 @@ This is a task-level implementation checklist for the MVP.
 
 | Phase | Status |
 |---|---|
-| 0 — Foundation and Alignment | **Partially started.** Checklist docs exist; baseline `Settings`, working API client, an existing `04_non_goals.md` doc, and passing `uv run ruff check .` are all pre-existing/verified. **`uv run pytest -q` currently fails** because `pyproject.toml` has no `[build-system]` table, so `uv sync` doesn't install the local package (a real, verified gap — not previously caught). New MVP-specific config fields, `.env.example`, acceptance-criteria doc, decision log, and the broken CI import name are also still outstanding. |
+| 0 — Foundation and Alignment | **Partially started.** Checklist docs exist; baseline `Settings`, working API client, an existing `04_non_goals.md` doc, and passing `uv run ruff check .` are all pre-existing/verified. **`uv run pytest -q` currently fails** because `pyproject.toml` has no `[build-system]` table, so `uv sync` doesn't install the local package (a real, verified gap — not previously caught). The acceptance-criteria doc (`03_mvp_acceptance_criteria.md`) is now **done** (2026-08-29). New MVP-specific config fields, `.env.example`, decision log, and the broken CI import name are still outstanding. |
 | 1 — Data Acquisition and Contracts | **Not started**, except that `TorontoOpenDataClient.search_datasets/get_dataset/get_resource_urls` already exist and work, and raw data folders already exist (with different naming than proposed here). |
 | 2 — Analytical Storage (SQLite) | **Not started.** No `db/` package, connection, migrations, or query layer exist in `src/`. |
 | 3 — Core ETL and Curated Dataset Build | **Not started.** `etl/ingest_breaks.py` is a docstring-only stub; no transform modules exist. |
@@ -25,12 +25,12 @@ This is a task-level implementation checklist for the MVP.
 
 - [x] `docs/00-1_checklists/00_high_level_checklist.md` — **exists** (created in prior session step).
 - [x] `docs/00-1_checklists/01_mvp_checklists.md` — **exists** (this file).
-- [ ] Create `docs/00-1_checklists/02_mvp_acceptance_criteria.md` containing, per phase, a table with columns: `Criterion | Measurement Method | Pass Threshold`. Example rows:
-  - [ ] Phase 1: "Raw ingestion success rate" | "count(files written)/count(datasets attempted)" | "= 100% for 4 MVP datasets"
-  - [ ] Phase 2: "Migration idempotency" | "run migrate.py twice, diff schema_version table" | "no duplicate/failed rows"
-  - [ ] Phase 3: "Curated join coverage" | "matched_rows / total_break_rows" | ">= 95% or documented exception"
-  - [ ] Phase 4: "Baseline model trains without error" | "exit code of train_model.py" | "0"
-  - [ ] Phase 5: "Report artifact renders" | "manual open of output file" | "no errors, all sections populated"
+- [x] Create `docs/00-1_checklists/03_mvp_acceptance_criteria.md` containing, per phase, a table with columns: `Criterion | Measurement Method | Pass Threshold`. — **created 2026-08-29.** Covers all 6 MVP phases (0–5) plus a "Cross-Phase Standing Criteria" table. Note: created as `03_` (not `02_`) per the task instruction; no `02_`-prefixed doc exists in `docs/00-1_checklists/`, so that number is currently unused. Example rows below were all included verbatim except where noted:
+  - [x] Phase 1: "Raw ingestion success rate" | "count(files written)/count(datasets attempted)" | "= 100% for 4 MVP datasets"
+  - [x] Phase 2: "Migration idempotency" | "run migrate.py twice, diff schema_version table" | "no duplicate/failed rows" — **table name corrected to `schema_migrations`** to match the migration DDL in 2.2 (`000_create_schema_history.sql`); `schema_version` does not exist anywhere in the planned schema.
+  - [x] Phase 3: "Curated join coverage" | "matched_rows / total_break_rows" | ">= 95% or documented exception"
+  - [x] Phase 4: "Baseline model trains without error" | "exit code of train_model.py" | "0"
+  - [x] Phase 5: "Report artifact renders" | "manual open of output file" | "no errors, all sections populated"
 - [~] `docs/00-0_overview/04_non_goals.md` — **already exists and substantially covers MVP exclusions** (no real-time/streaming, no live inference API, no asset-level prediction, no operational automation, no cloud-native/orchestration deployment, no advanced ML in early phases, scope-change control). Verbatim MVP-specific bullets below are **not yet appended** to that doc; treat as a gap-fill task, not a from-scratch task:
   - [ ] "No production API/FastAPI deployment in MVP"
   - [ ] "No real-time/streaming inference in MVP"
@@ -106,7 +106,7 @@ This is a task-level implementation checklist for the MVP.
 - [ ] `uv run pytest -q` passes locally with 0 failures. — **currently fails** under `uv` until the `[build-system]` fix (0.4) and core-dependency fix (0.3, `requests`) are applied. (Superseded an earlier incorrect "verified" note that had used `pip install -e .` in an ad hoc venv, not this project's `uv` workflow.)
 - [x] `uv run ruff check .` passes with 0 errors. — **verified**.
 - [ ] `git status` shows all Phase 0 directories/files committed (no untracked scaffolding left behind).
-- [ ] `docs/00-1_checklists/02_mvp_acceptance_criteria.md` exists and covers all 6 MVP phases.
+- [x] `docs/00-1_checklists/03_mvp_acceptance_criteria.md` exists and covers all 6 MVP phases. — **verified**: 6 per-phase tables (Phases 0–5) present, each with `Criterion | Measurement Method | Pass Threshold`.
 
 ---
 
